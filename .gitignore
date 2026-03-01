@@ -15,6 +15,7 @@ target/
 # Python cache
 __pycache__/
 *.pyc
+*.egg-info/
 
 # Large data files
 experiments/.data_cache/

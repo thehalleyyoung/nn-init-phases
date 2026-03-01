@@ -5,7 +5,7 @@ Diagnose and fix neural network initialization in **one line**. PhaseKit predict
 ## 30-Second Quickstart
 
 ```python
-import sys; sys.path.insert(0, 'implementation/src')
+import sys; sys.path.insert(0, 'src')
 from phasekit import classify, initialize, diagnose
 import torch.nn as nn
 
@@ -107,13 +107,13 @@ for act in ['relu', 'gelu', 'silu', 'tanh']:
 
 ```bash
 pip install numpy scipy torch torchvision
-cd implementation && pip install -e .
+pip install -e .
 ```
 
 ## Project Structure
 
 ```
-implementation/src/
+src/
   phasekit.py                 # Unified API (classify, initialize, diagnose)
   dag_propagator.py           # DAG-based variance propagation engine
   mean_field_theory.py        # Core MLP mean-field analysis
@@ -122,11 +122,14 @@ implementation/src/
   stochastic_crossover.py     # Phase boundary crossover analysis
   pytorch_integration.py      # PyTorch model analysis hooks
   graph_analyzer.py           # Forward-hook variance tracer
+tests/                        # Test suite (pytest)
+examples/                     # Usage examples
 experiments/
   run_comprehensive_validation.py   # Full validation (phase, DAG, init)
   run_stochastic_crossover.py       # Crossover width scaling
   run_z3_finite_width.py            # Z3 finite-width verification
   run_transformer_experiments.py    # Transformer validation
-theory/
-  tool_paper.tex                    # Paper (29 pages)
+docs/
+  theory/tool_paper.tex             # Paper (29 pages)
+  reviews/                          # Peer reviews
 ```
