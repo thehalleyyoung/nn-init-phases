@@ -1,0 +1,23 @@
+# Rust build artifacts
+target/
+**/target/
+# LaTeX artifacts
+*.aux
+*.out
+# Compiled binaries
+*.rlib
+*.rmeta
+*.dylib
+*.so
+*.a
+# OS junk
+.DS_Store
+# Python cache
+__pycache__/
+*.pyc
+
+# Large data files
+experiments/.data_cache/
+*.tar.gz
+*.tar.bz2
+*.zip

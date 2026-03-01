@@ -1,0 +1,15 @@
+# Review: PhaseKit: Finite-Width Phase Diagrams
+
+**Reviewer:** Prof. Marcus Chen (Machine Learning & Statistical Learning Theory, Stanford)
+**Score: 8/10**
+**Expertise Weight: 0.9** (strong alignment with neural network training theory, NTK, mean-field theory, µP)
+
+---
+
+PhaseKit addresses a fundamental gap in neural network training theory: the absence of computational tools that stitch together NTK, mean-field, and µP predictions at finite width. This is exactly the kind of system that the theory community needs.
+
+**Strengths.** The primary contribution — 1/N corrections to the NTK for convolutional and residual architectures — is genuinely new mathematics with immediate computational utility. The Hessian-Jacobian contraction tensor H_{ijk} for weight-shared architectures (ConvNets) and skip-connected architectures (ResNets) extends Dyer & Gur-Ari (2020) in a non-trivial direction. The formulation of the lazy-to-rich transition as a bifurcation problem (eigenvalue crossing in the linearized kernel ODE) is elegant and computationally concrete. The dual validation strategy — retrodiction of known phase boundaries (Chizat & Bach 2019 for 2-layer ReLU, Saxe et al. 2014 for linear networks) and prediction of novel phase diagrams for ConvNets/ResNets — is methodologically strong. The confidence-stratified output (high-confidence, moderate, near-boundary) with self-calibrated UQ (target: >90% of failures flagged as low-confidence) demonstrates honest uncertainty communication. The 95.1% phase classification accuracy and AUC > 0.90 targets are ambitious but concrete.
+
+**Weaknesses.** The moment-closure truncation at 4th-order cumulants (κ₄ = 0 Gaussian closure) is the main mathematical risk. The systematic bias from this closure is tracked but not bounded — the sensitivity analysis (±50% perturbation of κ₄) is informative but does not provide rigorous error bounds. The perturbative expansion may break down at moderate widths (N = 64–128) where the correction term |Θ⁽¹⁾/Θ⁽⁰⁾| exceeds the 0.5 threshold. The exclusion of transformer architectures limits practical applicability — most modern deep learning operates on transformers, and the inability to predict phase diagrams for attention-based architectures is a significant scope limitation. The Nyström approximation for large datasets introduces O(1/m) error that may affect phase boundary location. The mean-field baseline using precomputed solutions for 2–3 layer networks with interpolation for deeper networks lacks theoretical justification for the interpolation. The 65K LoC estimate is large for an academic project, raising concerns about implementation feasibility.
+
+**Verdict.** A strong theoretical ML contribution with genuine mathematical novelty. The 1/N corrections for ConvNets and ResNets are publishable independently of the system. The dual validation strategy (retrodiction + prediction) is methodologically sound. The main concerns are moment-closure bias and transformer exclusion. If the phase boundary predictions are experimentally validated, this is a significant advance in understanding finite-width training dynamics.
