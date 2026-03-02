@@ -1,0 +1,44 @@
+{
+  "experiment": "depth_kappa4_accumulation",
+  "activation": "relu",
+  "width": 256,
+  "results": [
+    {
+      "depth": 5,
+      "mean_kappa4": -0.0671,
+      "std_kappa4": 0.4151,
+      "max_abs_kappa4": 1.4288,
+      "n_trials": 100
+    },
+    {
+      "depth": 10,
+      "mean_kappa4": -0.1536,
+      "std_kappa4": 0.4763,
+      "max_abs_kappa4": 1.6684,
+      "n_trials": 100
+    },
+    {
+      "depth": 20,
+      "mean_kappa4": -0.0837,
+      "std_kappa4": 0.6851,
+      "max_abs_kappa4": 1.9339,
+      "n_trials": 100
+    },
+    {
+      "depth": 30,
+      "mean_kappa4": -0.2735,
+      "std_kappa4": 0.6606,
+      "max_abs_kappa4": 2.0949,
+      "n_trials": 100
+    },
+    {
+      "depth": 50,
+      "mean_kappa4": -0.0666,
+      "std_kappa4": 0.7805,
+      "max_abs_kappa4": 2.3538,
+      "n_trials": 100
+    }
+  ],
+  "growth_exponent": 0.1087,
+  "conclusion": "\u03ba\u2084 accumulation is sub-linear in depth at criticality, confirming the Gaussian closure bias is controlled."
+}

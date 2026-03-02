@@ -151,9 +151,7 @@ Returns dict with: `scaling_exponent`, `scaling_prefactor`, `r_squared`.
 
 | Script | Description |
 |---|---|
+| `e2e_validation.py` | End-to-end training validation (72 configs) |
 | `run_comprehensive_validation.py` | Full validation: phase, DAG, init |
-| `run_universal_graph_experiment.py` | 61-architecture DAG validation |
-| `run_z3_finite_width.py` | Z3 finite-width verification |
-| `run_transformer_experiments.py` | Transformer validation |
 | `run_stochastic_crossover.py` | Crossover width scaling |
-| `run_z3_convergence.py` | Z3 SMT convergence verification |
+| `run_z3_finite_width.py` | Z3 finite-width verification |

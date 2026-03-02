@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-03-01 23:43:35",
+  "elapsed_seconds": 2065.9,
+  "experiments": {
+    "phase_validation": "phase_prediction_validation",
+    "init_comparison": "init_comparison",
+    "kappa4_mc": "kappa4_monte_carlo",
+    "uq_calibration": "uq_calibration",
+    "depth_kappa4": "depth_kappa4_accumulation"
+  }
+}

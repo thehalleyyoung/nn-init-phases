@@ -1,0 +1,33 @@
+{
+  "experiment": "uq_calibration",
+  "n_predictions": 160,
+  "calibration_bins": [
+    {
+      "bin": "0.0-0.1",
+      "mean_confidence": 0.0831,
+      "actual_accuracy": 0.5,
+      "n_samples": 2
+    },
+    {
+      "bin": "0.3-0.4",
+      "mean_confidence": 0.3632,
+      "actual_accuracy": 0.5,
+      "n_samples": 2
+    },
+    {
+      "bin": "0.4-0.5",
+      "mean_confidence": 0.4599,
+      "actual_accuracy": 0.5,
+      "n_samples": 2
+    },
+    {
+      "bin": "0.8-0.9",
+      "mean_confidence": 0.8239,
+      "actual_accuracy": 1.0,
+      "n_samples": 3
+    }
+  ],
+  "ece": 0.1907,
+  "low_conf_count": 2,
+  "high_conf_count": 158
+}

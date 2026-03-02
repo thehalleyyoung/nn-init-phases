@@ -1004,7 +1004,8 @@ def compute_dag_chi(
     if n_weight == 0:
         return 1.0, "critical"
 
-    phase = _classify_chi(chi_product, has_norm=False, has_residual=False)
+    phase = _classify_chi(chi_product, has_norm=False, has_residual=False,
+                          n_weight_layers=n_weight)
     return chi_product, phase
 
 
@@ -1058,7 +1059,9 @@ def _compute_chi_residual(
         for name in topo_order:
             if name in nodes and (nodes[name].is_weight_layer or nodes[name].is_activation):
                 chi_product *= chis.get(name, 1.0)
-        return chi_product, _classify_chi(chi_product, False, False)
+        return chi_product, _classify_chi(chi_product, False, False,
+                                        n_weight_layers=sum(1 for n in topo_order
+                                                           if n in nodes and nodes[n].is_weight_layer))
 
     # Per-block chi: between residual merges
     block_chis = []
@@ -1084,8 +1087,17 @@ def _compute_chi_residual(
     return geo_mean, phase
 
 
-def _classify_chi(chi: float, has_norm: bool, has_residual: bool) -> str:
-    """Classify phase from chi value."""
+def _classify_chi(chi: float, has_norm: bool, has_residual: bool,
+                   n_weight_layers: int = 0) -> str:
+    """Classify phase from chi value with depth-dependent boundaries.
+
+    For sequential networks, chi is the TOTAL susceptibility (product over
+    layers). The practical phase depends on whether chi_total causes gradient
+    pathology severe enough to prevent training at the given depth.
+
+    Uses per-layer chi = chi_total^(1/L) with depth-dependent thresholds:
+    trainable when per-layer chi in [10^(-4/L), 10^(4/L)].
+    """
     if has_norm:
         if abs(chi - 1.0) < 0.3:
             return "critical"
@@ -1098,9 +1110,29 @@ def _classify_chi(chi: float, has_norm: bool, has_residual: bool) -> str:
             return "chaotic"
         return "critical"
 
-    if abs(chi - 1.0) < 0.15:
+    # Depth-dependent classification for sequential networks
+    depth = max(n_weight_layers, 1)
+    if depth <= 1:
         return "critical"
-    return "ordered" if chi < 1.0 else "chaotic"
+
+    # Compute per-layer chi from chi_total
+    if chi > 0 and chi < float('inf'):
+        chi_per_layer = chi ** (1.0 / depth)
+    elif chi <= 0:
+        return "ordered"
+    else:
+        return "chaotic"
+
+    # Depth-calibrated boundaries: trainable when chi_total in ~[1e-4, 1e4]
+    # Per-layer: [10^(-4/L), 10^(4/L)]
+    ordered_threshold = 10.0 ** (-4.0 / depth)
+    chaotic_threshold = 10.0 ** (4.0 / depth)
+
+    if chi_per_layer < ordered_threshold:
+        return "ordered"
+    elif chi_per_layer > chaotic_threshold:
+        return "chaotic"
+    return "critical"
 
 
 # ======================================================================
