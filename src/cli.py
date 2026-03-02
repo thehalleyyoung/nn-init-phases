@@ -77,6 +77,19 @@ def build_parser() -> argparse.ArgumentParser:
     p_compute.add_argument("--profile", choices=["quick", "standard", "thorough", "research"],
                            default="standard", help="Configuration profile.")
     p_compute.add_argument("--arch", type=str, default=None, help="Architecture DSL string.")
+    p_compute.add_argument("--checkpoint", type=str, default=None,
+                           help="Path to a .pt/.pth file containing a saved nn.Module.")
+    p_compute.add_argument("--from-torchvision", type=str, default=None, dest="from_torchvision",
+                           help="Load a torchvision model by name (e.g. resnet18, vgg11).")
+    p_compute.add_argument("--onnx", type=str, default=None,
+                           help="Path to an ONNX model file (.onnx).")
+    p_compute.add_argument("--hf-model", type=str, default=None, dest="hf_model",
+                           help="HuggingFace model name (e.g. bert-base-uncased).")
+    p_compute.add_argument("--hf-model-local", type=str, default=None, dest="hf_model_local",
+                           help="Path to a local HuggingFace checkpoint directory.")
+    p_compute.add_argument("--input-shape", type=str, default=None, dest="input_shape",
+                           help="Input shape as comma-separated ints (e.g. '3,32,32'). "
+                                "Auto-detected from checkpoint if omitted.")
     p_compute.add_argument("--depth", type=int, default=None)
     p_compute.add_argument("--width", type=int, default=None)
     p_compute.add_argument("--activation", type=str, default=None)
@@ -91,6 +104,18 @@ def build_parser() -> argparse.ArgumentParser:
     p_cal.add_argument("--bootstrap", type=int, default=None)
     p_cal.add_argument("--profile", choices=["quick", "standard", "thorough", "research"],
                        default="standard")
+    p_cal.add_argument("--checkpoint", type=str, default=None,
+                       help="Path to a .pt/.pth file containing a saved nn.Module.")
+    p_cal.add_argument("--from-torchvision", type=str, default=None, dest="from_torchvision",
+                       help="Load a torchvision model by name (e.g. resnet18, vgg11).")
+    p_cal.add_argument("--onnx", type=str, default=None,
+                       help="Path to an ONNX model file (.onnx).")
+    p_cal.add_argument("--hf-model", type=str, default=None, dest="hf_model",
+                       help="HuggingFace model name (e.g. bert-base-uncased).")
+    p_cal.add_argument("--hf-model-local", type=str, default=None, dest="hf_model_local",
+                       help="Path to a local HuggingFace checkpoint directory.")
+    p_cal.add_argument("--input-shape", type=str, default=None, dest="input_shape",
+                       help="Input shape as comma-separated ints (e.g. '3,32,32').")
     p_cal.set_defaults(func=cmd_calibrate)
 
     # ---- map ---------------------------------------------------------------
@@ -128,6 +153,23 @@ def build_parser() -> argparse.ArgumentParser:
     p_retro.add_argument("--profile", choices=["quick", "standard", "thorough", "research"],
                          default="standard")
     p_retro.set_defaults(func=cmd_retrodiction)
+
+    # ---- diagnose ----------------------------------------------------------
+    p_diag = sub.add_parser("diagnose", help="Diagnose a PyTorch model's initialization phase.")
+    p_diag.add_argument("--checkpoint", type=str, default=None,
+                        help="Path to a .pt/.pth file containing a saved nn.Module.")
+    p_diag.add_argument("--from-torchvision", type=str, default=None, dest="from_torchvision",
+                        help="Load a torchvision model by name (e.g. resnet18, vgg11).")
+    p_diag.add_argument("--onnx", type=str, default=None,
+                        help="Path to an ONNX model file (.onnx).")
+    p_diag.add_argument("--hf-model", type=str, default=None, dest="hf_model",
+                        help="HuggingFace model name (e.g. bert-base-uncased).")
+    p_diag.add_argument("--hf-model-local", type=str, default=None, dest="hf_model_local",
+                        help="Path to a local HuggingFace checkpoint directory.")
+    p_diag.add_argument("--input-shape", type=str, default=None, dest="input_shape",
+                        help="Input shape as comma-separated ints (e.g. '3,32,32'). "
+                             "Auto-detected if omitted.")
+    p_diag.set_defaults(func=cmd_diagnose)
 
     return parser
 
@@ -405,6 +447,130 @@ def cmd_retrodiction(args: argparse.Namespace) -> int:
                 passed = r.get("passed", False)
                 status = "PASS" if passed else "FAIL"
                 print(f"  [{status}] {name}")
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# Model loading helpers (checkpoint / torchvision)
+# ---------------------------------------------------------------------------
+
+def _parse_input_shape(shape_str: str):
+    """Parse a comma-separated input shape string into a tuple of ints."""
+    return tuple(int(x.strip()) for x in shape_str.split(","))
+
+
+def _load_model_from_args(args: argparse.Namespace):
+    """Load an nn.Module from --checkpoint, --from-torchvision, --onnx, or --hf-model flags.
+
+    Returns (model_or_info, input_shape) or (None, None) if no flag is set.
+    For --onnx and --hf-model / --hf-model-local the first element is an
+    architecture description *dict* rather than an ``nn.Module``.
+    """
+    from .checkpoint_loader import (
+        load_checkpoint, load_torchvision_model, detect_input_shape,
+        load_onnx_model, load_hf_model, load_hf_model_local,
+    )
+
+    checkpoint = getattr(args, "checkpoint", None)
+    from_tv = getattr(args, "from_torchvision", None)
+    onnx_path = getattr(args, "onnx", None)
+    hf_name = getattr(args, "hf_model", None)
+    hf_local = getattr(args, "hf_model_local", None)
+
+    sources = [s for s in [checkpoint, from_tv, onnx_path, hf_name, hf_local] if s]
+    if len(sources) > 1:
+        raise ValueError(
+            "Only one model source allowed. Choose one of: "
+            "--checkpoint, --from-torchvision, --onnx, --hf-model, --hf-model-local."
+        )
+
+    model = None
+    if checkpoint:
+        model = load_checkpoint(checkpoint)
+    elif from_tv:
+        model = load_torchvision_model(from_tv)
+    elif onnx_path:
+        arch_info = load_onnx_model(onnx_path)
+        return arch_info, None
+    elif hf_name:
+        arch_info = load_hf_model(hf_name)
+        return arch_info, None
+    elif hf_local:
+        arch_info = load_hf_model_local(hf_local)
+        return arch_info, None
+
+    if model is None:
+        return None, None
+
+    shape_str = getattr(args, "input_shape", None)
+    if shape_str:
+        input_shape = _parse_input_shape(shape_str)
+    else:
+        input_shape = detect_input_shape(model)
+
+    return model, input_shape
+
+
+def cmd_diagnose(args: argparse.Namespace) -> int:
+    """Diagnose a PyTorch model's initialization phase."""
+    _setup_logging(args)
+
+    model_or_info, input_shape = _load_model_from_args(args)
+    if model_or_info is None:
+        print("Error: a model source is required for diagnose. Use one of:\n"
+              "  --checkpoint, --from-torchvision, --onnx, --hf-model, --hf-model-local",
+              file=sys.stderr)
+        return 1
+
+    # ONNX / HuggingFace: we received an architecture description dict
+    if isinstance(model_or_info, dict):
+        if not args.quiet:
+            print(f"{'=' * 60}")
+            print(f"  PhaseKit — diagnose (from {model_or_info.get('source', 'external')})")
+            print(f"{'=' * 60}")
+        for key in ("n_layers", "d_model", "d_ff", "activation", "model_name",
+                     "n_linear", "n_conv", "op_counts"):
+            if key in model_or_info and model_or_info[key]:
+                print(f"  {key}: {model_or_info[key]}")
+        # If a full nn.Module was loaded (HF with weights), fall through
+        if "model" in model_or_info:
+            model = model_or_info["model"]
+            input_shape = input_shape or (model_or_info.get("d_model", 768),)
+        else:
+            return 0
+
+    else:
+        model = model_or_info
+
+    from .phasekit import diagnose
+
+    if not args.quiet:
+        print(f"{'=' * 60}")
+        print(f"  PhaseKit — diagnose")
+        print(f"{'=' * 60}")
+        print(f"  Input shape: {input_shape}")
+        print()
+
+    report = diagnose(model, input_shape=input_shape)
+
+    print(f"Phase: {report.classification.phase}")
+    print(f"χ_total: {report.classification.chi_total:.4f}")
+    print(f"Depth scale: {report.classification.depth_scale:.1f}")
+    print(f"Recommended σ_w: {report.classification.recommended_sigma_w:.4f}")
+    print(f"Architecture: {report.classification.arch_summary}")
+    print(f"Weight layers: {report.classification.n_weight_layers}")
+    print(f"Parameters: {report.classification.n_params:,}")
+    print()
+
+    if report.recommendations:
+        print("Recommendations:")
+        for r in report.recommendations:
+            print(f"  • {r}")
+    if report.warnings:
+        print("\nWarnings:")
+        for w in report.warnings:
+            print(f"  ⚠ {w}")
+
     return 0
 
 
