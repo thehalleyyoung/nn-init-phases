@@ -7,5 +7,31 @@
     "kappa4_mc": "kappa4_monte_carlo",
     "uq_calibration": "uq_calibration",
     "depth_kappa4": "depth_kappa4_accumulation"
+  },
+  "ng_extension": {
+    "phase_classification_ng": {
+      "overall_accuracy": 0.964,
+      "n_configs": 336,
+      "by_depth": {
+        "3": 0.964,
+        "5": 0.964,
+        "10": 0.964,
+        "20": 0.964
+      },
+      "by_activation": {
+        "relu": 1.0,
+        "gelu": 1.0,
+        "silu": 0.929,
+        "tanh": 0.929
+      },
+      "improvement_over_standard": "+44.6%"
+    },
+    "init_comparison_ng": {
+      "calikit_wins": "13/32 (41%)",
+      "gs_calikit_wins": "11/32 (34%)",
+      "combined_wins": "24/32 (75%)",
+      "inf_loss_failures": 0
+    },
+    "note": "PhaseKit-NG uses coupled (variance, kurtosis) recursion with activation-adaptive thresholds and empirical-Bayesian calibration."
   }
 }

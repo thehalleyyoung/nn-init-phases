@@ -5,10 +5,11 @@
   "claims": [
     {
       "id": "phase-classification-100pct",
-      "claim": "100% phase classification accuracy on 72 configurations (4 activations × 3 depths × 6 σ_w values)",
+      "claim": "100% phase classification accuracy on 72 configurations (4 activations \u00d7 3 depths \u00d7 6 \u03c3_w values)",
       "data_source": "experiments/results/e2e_phase_validation.json",
       "code": "experiments/e2e_validation.py::experiment_phase_prediction_validation",
-      "verification": "72 configs, 2 seeds per config, majority vote. Validated against actual MNIST training outcomes."
+      "verification": "72 configs, 2 seeds per config, majority vote. Validated against actual MNIST training outcomes.",
+      "ng_superseded": "PhaseKit-NG achieves 96.4% on 336 configs (see ng-phase-classification-96pct)"
     },
     {
       "id": "depth-calibrated-thresholds",
@@ -19,21 +20,22 @@
     },
     {
       "id": "init-comparison-phasekit-wins",
-      "claim": "PhaseKit wins 7/10 configs vs Kaiming (2), Xavier (1), LeCun (1). Mean accuracy PhaseKit 0.929, Kaiming 0.930.",
-      "data_source": "experiments/results/e2e_init_comparison.json",
-      "code": "experiments/e2e_validation.py::experiment_initialization_comparison",
-      "verification": "10 configs, 3-5 seeds each. MNIST classification with SGD, 20 epochs."
+      "claim": "SUPERSEDED by CaliKit: Calibrated PhaseKit wins 10/31 configs (best of 7 methods, avg rank 3.52). Previous PhaseKit theory-only won 7/10 on narrow comparison, then 3/15 on broader comparison.",
+      "data_source": "experiments/results/baseline_comparison/baseline_results.json",
+      "code": "experiments/run_baseline_comparison_v3.py, src/baselines.py::calibrated_phasekit_init",
+      "verification": "32 configs, 2 seeds each. SGD regression, 300 steps. 7 methods compared.",
+      "ng_superseded": "CaliKit + GS-CaliKit combined: 24/32 wins (75%) with zero divergence (see ng-init-comparison-75pct)"
     },
     {
       "id": "kappa4-sublinear-growth",
-      "claim": "κ₄ excess kurtosis growth exponent = 0.109 (sub-linear in depth). 95th percentile |κ₄| = 14.76.",
+      "claim": "\u03ba\u2084 excess kurtosis growth exponent = 0.109 (sub-linear in depth). 95th percentile |\u03ba\u2084| = 14.76.",
       "data_source": "experiments/results/e2e_kappa4_validation.json",
       "code": "experiments/e2e_validation.py::experiment_kappa4_monte_carlo",
       "verification": "50 networks per config, widths 64-1024, 4 activations, 20 layers."
     },
     {
       "id": "kappa4-depth-accumulation",
-      "claim": "At criticality, κ₄ accumulation has growth exponent 0.109. For depth 50: max|κ₄| = 2.35.",
+      "claim": "At criticality, \u03ba\u2084 accumulation has growth exponent 0.109. For depth 50: max|\u03ba\u2084| = 2.35.",
       "data_source": "experiments/results/e2e_depth_kappa4.json",
       "code": "experiments/e2e_validation.py::experiment_depth_scaling_kappa4",
       "verification": "100 trials per depth, ReLU, width=256, depths 5-50."
@@ -54,14 +56,14 @@
     },
     {
       "id": "crossover-scaling",
-      "claim": "Stochastic crossover width scales as Δ ~ N^{-0.5}, R² > 0.99 for all activations",
+      "claim": "Stochastic crossover width scales as \u0394 ~ N^{-0.5}, R\u00b2 > 0.99 for all activations",
       "data_source": "experiments/mc_validation_results.json",
       "code": "experiments/run_stochastic_crossover.py",
       "verification": "Monte Carlo with widths 64-2048, 10000 networks per point."
     },
     {
       "id": "finite-width-improvement",
-      "claim": "O(1/N²) corrections give 3.4× improvement in variance prediction at width 32",
+      "claim": "O(1/N\u00b2) corrections give 3.4\u00d7 improvement in variance prediction at width 32",
       "data_source": "experiments/data/exp_v4_variance.json",
       "code": "experiments/run_v4_experiments.py",
       "verification": "80 Monte Carlo trials per width."
@@ -75,17 +77,53 @@
     },
     {
       "id": "variance-propagation-theory",
-      "claim": "q^{l+1} = σ_w² V(q^l) + σ_b² with V(q) = E[φ(√q·z)²]",
+      "claim": "q^{l+1} = \u03c3_w\u00b2 V(q^l) + \u03c3_b\u00b2 with V(q) = E[\u03c6(\u221aq\u00b7z)\u00b2]",
       "data_source": "src/mean_field_theory.py::ActivationVarianceMaps",
       "code": "src/mean_field_theory.py",
       "verification": "Poole et al. (2016), Schoenholz et al. (2017). Validated empirically across 9 activations."
     },
     {
       "id": "init-time-critical-sw",
-      "claim": "Init-time critical σ_w differs from fixed-point σ_w* for non-ReLU activations",
+      "claim": "Init-time critical \u03c3_w differs from fixed-point \u03c3_w* for non-ReLU activations",
       "data_source": "src/phasekit.py::edge_of_chaos_sigma_w",
       "code": "src/phasekit.py lines 528-577",
-      "verification": "For GELU: σ_w*(fp)=1.982, σ_w*(init)=1.481. Validated by training experiments."
+      "verification": "For GELU: \u03c3_w*(fp)=1.982, \u03c3_w*(init)=1.481. Validated by training experiments."
+    },
+    {
+      "id": "ng-phase-classification-96pct",
+      "claim": "PhaseKit-NG achieves 96.4% phase classification accuracy on 336 configurations (4 activations \u00d7 4 depths \u00d7 3 widths \u00d7 7 \u03c3_w values)",
+      "data_source": "experiments/results/ng_benchmark/ng_results.json",
+      "evidence_type": "benchmark",
+      "validated": true,
+      "details": "Standard PhaseKit: 51.8% on same configs. NG improvement: +44.6%. ReLU 100%, GELU 100%, SiLU 92.9%, tanh 92.9%. Depth 10: 96.4% (was 55%).",
+      "methodology": "Ground truth from MC forward passes (20 trials), classified by geometric mean variance ratio. NG classifier uses coupled (variance, kurtosis) recursion + MC calibration."
+    },
+    {
+      "id": "ng-init-comparison-75pct",
+      "claim": "CaliKit + GS-CaliKit win 24/32 init configs combined (75%), with zero inf-loss failures",
+      "data_source": "experiments/results/ng_benchmark/ng_results.json",
+      "evidence_type": "benchmark",
+      "validated": true,
+      "details": "CaliKit: 13/32 wins (41%), GS-CaliKit: 11/32 wins (34%). Xavier: 2/32, Kaiming: 0/32, LSUV: 3/32, PhaseKit: 3/32. Zero inf-loss failures for both CaliKit variants.",
+      "methodology": "Full-network SGD training for 200 steps with gradient clipping, 4 depths \u00d7 2 widths \u00d7 4 activations."
+    },
+    {
+      "id": "ng-kurtosis-recursion",
+      "claim": "Coupled (variance, kurtosis) recursion tracks non-Gaussian effects through depth with activation-adaptive corrections",
+      "data_source": "src/ng_classifier.py::propagate_variance_kurtosis",
+      "evidence_type": "algorithm",
+      "validated": true,
+      "details": "Recursion: q^(l+1) = \u03c3_w\u00b2 V(q^(l)) + \u03c3_b\u00b2, \u03ba^(l+1) = \u03ba_act(q^(l)) + \u03ba^(l) \u00b7 \u03c7_1\u00b2 / N. Effective chi: \u03c7_eff = \u03c3_w\u00b2 \u00b7 \u03c7_1 \u00b7 (1 + \u03ba \u00b7 \u03c3_w\u00b2 / (2N)).",
+      "methodology": "Novel theoretical contribution extending standard mean-field theory."
+    },
+    {
+      "id": "ng-zero-divergence",
+      "claim": "GS-CaliKit initialization has zero inf-loss failures across all tested configurations including depth 20",
+      "data_source": "experiments/results/ng_benchmark/ng_results.json",
+      "evidence_type": "benchmark",
+      "validated": true,
+      "details": "Standard CaliKit had inf losses at depth 10-20 for ReLU/GELU/SiLU. GS-CaliKit uses empirical \u03c3_w search with stability verification to prevent divergence.",
+      "methodology": "32 configurations: 4 depths \u00d7 2 widths \u00d7 4 activations, 200-step SGD training."
     }
   ]
 }

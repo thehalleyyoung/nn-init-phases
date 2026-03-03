@@ -1,0 +1,4390 @@
+{
+  "summary": {
+    "overall_accuracy": 0.75,
+    "n_correct": 90,
+    "n_incorrect": 30,
+    "n_total": 120,
+    "n_configs_tested": 120,
+    "by_depth": {
+      "3": {
+        "accuracy": 1.0,
+        "n_correct": 40,
+        "n_total": 40
+      },
+      "5": {
+        "accuracy": 0.7,
+        "n_correct": 28,
+        "n_total": 40
+      },
+      "10": {
+        "accuracy": 0.55,
+        "n_correct": 22,
+        "n_total": 40
+      }
+    },
+    "by_activation": {
+      "relu": {
+        "accuracy": 0.8,
+        "n_correct": 24,
+        "n_total": 30
+      },
+      "tanh": {
+        "accuracy": 0.8666666666666667,
+        "n_correct": 26,
+        "n_total": 30
+      },
+      "gelu": {
+        "accuracy": 0.6666666666666666,
+        "n_correct": 20,
+        "n_total": 30
+      },
+      "silu": {
+        "accuracy": 0.6666666666666666,
+        "n_correct": 20,
+        "n_total": 30
+      }
+    },
+    "timestamp": "2026-03-02T07:01:28.354904"
+  },
+  "results": [
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 0.42426406871192845,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.001481411872788689,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.001459584954094428,
+          "val_acc": 1.0,
+          "train_loss": 0.002059772098436952,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.00150323879148295,
+          "val_acc": 1.0,
+          "train_loss": 0.0020329771330580117,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 0.9899494936611664,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.23907622424177222,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.23555366996079413,
+          "val_acc": 1.0,
+          "train_loss": 0.003288065316155553,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.2425987785227503,
+          "val_acc": 1.0,
+          "train_loss": 0.0033471603179350494,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 1.414213562373095,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9950000047683716,
+      "std_val_acc": 0.004999995231628418,
+      "mean_chi": 2.0321145579088857,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 2.002173439896436,
+          "val_acc": 1.0,
+          "train_loss": 0.005291811446659267,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 2.0620556759213353,
+          "val_acc": 0.9900000095367432,
+          "train_loss": 0.005198570806533099,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 1.8384776310850235,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.973333328962326,
+      "std_val_acc": 0.010000020265579224,
+      "mean_chi": 9.808627656161194,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 9.664107837206672,
+          "val_acc": 0.9833333492279053,
+          "train_loss": 0.008695852430537342,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 9.953147475115717,
+          "val_acc": 0.9633333086967468,
+          "train_loss": 0.008080482902005314,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 2.82842712474619,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.8683333396911621,
+      "std_val_acc": 0.011666655540466309,
+      "mean_chi": 130.0553317061687,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 128.1391001533719,
+          "val_acc": 0.8799999952316284,
+          "train_loss": 0.004702421557158232,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 131.97156325896546,
+          "val_acc": 0.8566666841506958,
+          "train_loss": 0.004002586146816612,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.42426406871192845,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.996666669845581,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 1.163465486268656e-05,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 1.2170005611821065e-05,
+          "val_acc": 1.0,
+          "train_loss": 0.00028291235939832405,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 1.1099304113552056e-05,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 0.000331711616308894,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.9899494936611664,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9950000047683716,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 0.05565716937289342,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.058218137433337626,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.0003621082156314515,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.05309620131244921,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 0.00035084031987935304,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.414213562373095,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9816666841506958,
+      "std_val_acc": 0.004999995231628418,
+      "mean_chi": 1.970338157158069,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 2.060999677039365,
+          "val_acc": 0.9866666793823242,
+          "train_loss": 0.0009735901374369859,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1.879676637276773,
+          "val_acc": 0.9766666889190674,
+          "train_loss": 0.0009977913345210255,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.8384776310850235,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9283333420753479,
+      "std_val_acc": 0.014999985694885254,
+      "mean_chi": 27.162775770598103,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 28.412623802546662,
+          "val_acc": 0.9433333277702332,
+          "train_loss": 0.003148135193623602,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 25.91292773864954,
+          "val_acc": 0.9133333563804626,
+          "train_loss": 0.0030785104725509884,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 2.82842712474619,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.7866666615009308,
+      "std_val_acc": 0.013333350419998169,
+      "mean_chi": 2017.6262729298626,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 2110.4636692883096,
+          "val_acc": 0.800000011920929,
+          "train_loss": 7.718453416600823e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1924.7888765714156,
+          "val_acc": 0.7733333110809326,
+          "train_loss": 4.695169282058487e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.42426406871192845,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.75,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 6.899952591707126e-11,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 6.814272244808731e-11,
+          "val_acc": 0.753333330154419,
+          "train_loss": 0.3152068927884102,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 6.985632938605521e-11,
+          "val_acc": 0.746666669845581,
+          "train_loss": 0.30530430674552916,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.9899494936611664,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9850000143051147,
+      "std_val_acc": 0.004999995231628418,
+      "mean_chi": 0.0015789970651085925,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.001559389396063431,
+          "val_acc": 0.9900000095367432,
+          "train_loss": 0.00010055327475129161,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.0015986047341537543,
+          "val_acc": 0.9800000190734863,
+          "train_loss": 0.00013803484180243685,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.414213562373095,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9650000035762787,
+      "std_val_acc": 0.005000025033950806,
+      "mean_chi": 1.97888549009192,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1.9543124879796918,
+          "val_acc": 0.9599999785423279,
+          "train_loss": 0.00012695117256953382,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 2.003458492204148,
+          "val_acc": 0.9700000286102295,
+          "train_loss": 0.00016362191090593114,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.8384776310850235,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.7833333313465118,
+      "std_val_acc": 0.030000001192092896,
+      "mean_chi": 376.0862318768293,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 371.41618400757415,
+          "val_acc": 0.8133333325386047,
+          "train_loss": 0.0009223968838341535,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 380.7562797460845,
+          "val_acc": 0.753333330154419,
+          "train_loss": 0.0010653912322595716,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 2.82842712474619,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.7150000035762787,
+      "std_val_acc": 0.005000025033950806,
+      "mean_chi": 2075011.831658625,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 2049245.1713957933,
+          "val_acc": 0.7200000286102295,
+          "train_loss": 1.1914077271912675,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 2100778.4919214565,
+          "val_acc": 0.7099999785423279,
+          "train_loss": 0.8564900947189017,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 0.42426406871192845,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.001463598903745853,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.0014462472098312725,
+          "val_acc": 1.0,
+          "train_loss": 0.0007240611070301384,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.0014809505976604337,
+          "val_acc": 1.0,
+          "train_loss": 0.0006969205394852906,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 0.9899494936611664,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.23620152643194361,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.2334012311090083,
+          "val_acc": 1.0,
+          "train_loss": 0.0011850636336021125,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.23900182175487894,
+          "val_acc": 1.0,
+          "train_loss": 0.001257685711607337,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 1.414213562373095,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9983333349227905,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 2.0076800922607316,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1.9838781822876537,
+          "val_acc": 1.0,
+          "train_loss": 0.0016435284866020083,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 2.0314820022338096,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.001806791708804667,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 1.8384776310850235,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9933333396911621,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 9.690688831375596,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 9.575801322550634,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.0018877470400184392,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 9.805576340200556,
+          "val_acc": 0.9900000095367432,
+          "train_loss": 0.0021464355406351386,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 2.82842712474619,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9549999833106995,
+      "std_val_acc": 0.008333325386047363,
+      "mean_chi": 128.49152590468682,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 126.96820366640983,
+          "val_acc": 0.9633333086967468,
+          "train_loss": 0.00025467882805969567,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 130.0148481429638,
+          "val_acc": 0.9466666579246521,
+          "train_loss": 0.0002741469434113242,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.42426406871192845,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 1.2127092584134706e-05,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 1.219448638101415e-05,
+          "val_acc": 1.0,
+          "train_loss": 2.187952686654171e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 1.2059698787255261e-05,
+          "val_acc": 1.0,
+          "train_loss": 2.601647975097876e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.9899494936611664,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.05801287285933697,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.058335275776945736,
+          "val_acc": 1.0,
+          "train_loss": 3.769444265344646e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.0576904699417282,
+          "val_acc": 1.0,
+          "train_loss": 3.482203446765197e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.414213562373095,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9950000047683716,
+      "std_val_acc": 0.004999995231628418,
+      "mean_chi": 2.0537335024071974,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 2.0651466699484358,
+          "val_acc": 1.0,
+          "train_loss": 0.00015790004908922128,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 2.042320334865959,
+          "val_acc": 0.9900000095367432,
+          "train_loss": 0.000198116603132803,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.8384776310850235,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9783333241939545,
+      "std_val_acc": 0.011666685342788696,
+      "mean_chi": 28.31246122032409,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 28.469803130513892,
+          "val_acc": 0.9900000095367432,
+          "train_loss": 0.0003996151499450207,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 28.15511931013429,
+          "val_acc": 0.9666666388511658,
+          "train_loss": 0.000386956796864979,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 2.82842712474619,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9433333277702332,
+      "std_val_acc": 0.0,
+      "mean_chi": 2103.02310646497,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 2114.710190027198,
+          "val_acc": 0.9433333277702332,
+          "train_loss": 1.2420994263351305e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 2091.336022902742,
+          "val_acc": 0.9433333277702332,
+          "train_loss": 2.5523983212261125e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.42426406871192845,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.8083333373069763,
+      "std_val_acc": 0.13499999046325684,
+      "mean_chi": 7.183551795650877e-11,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 7.233582522991501e-11,
+          "val_acc": 0.9433333277702332,
+          "train_loss": 0.10654320605099202,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 7.133521068310254e-11,
+          "val_acc": 0.6733333468437195,
+          "train_loss": 0.6373523622751236,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.9899494936611664,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.0016438968175321554,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.001655345996931966,
+          "val_acc": 1.0,
+          "train_loss": 1.2748200879286741e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.0016324476381323451,
+          "val_acc": 1.0,
+          "train_loss": 7.37452537578065e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.414213562373095,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9916666746139526,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 2.0602213604669384,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 2.074570137865506,
+          "val_acc": 0.9900000095367432,
+          "train_loss": 1.232510057889158e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 2.0458725830683706,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 3.1202562240650877e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.8384776310850235,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9483333230018616,
+      "std_val_acc": 0.004999995231628418,
+      "mean_chi": 391.5444571807151,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 394.27141113453797,
+          "val_acc": 0.9433333277702332,
+          "train_loss": 4.098364479432348e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 388.81750322689214,
+          "val_acc": 0.95333331823349,
+          "train_loss": 3.841786201519426e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "relu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 2.82842712474619,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.414213562373095,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9449999928474426,
+      "std_val_acc": 0.004999995231628418,
+      "mean_chi": 2160298.6732729804,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 2175344.456882461,
+          "val_acc": 0.949999988079071,
+          "train_loss": 1.6030003379098925,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 2145252.8896635,
+          "val_acc": 0.9399999976158142,
+          "train_loss": 1.2497792582951575,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 0.30294218667407535,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.000664550452601876,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.0006539145505717054,
+          "val_acc": 1.0,
+          "train_loss": 0.005947890179231763,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.0006751863546320464,
+          "val_acc": 1.0,
+          "train_loss": 0.005758201330900192,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 0.7068651022395092,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.060623612496047155,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.059465263826633266,
+          "val_acc": 1.0,
+          "train_loss": 0.007664816780015826,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.06178196116546104,
+          "val_acc": 1.0,
+          "train_loss": 0.007381017738953233,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 1.0098072889135845,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.3116871531192675,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.30526323032600083,
+          "val_acc": 1.0,
+          "train_loss": 0.008722002804279327,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.3181110759125341,
+          "val_acc": 1.0,
+          "train_loss": 0.008339297864586115,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 1.3127494755876599,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.9482224204804359,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.9279903796804887,
+          "val_acc": 1.0,
+          "train_loss": 0.0098853993229568,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.9684544612803833,
+          "val_acc": 1.0,
+          "train_loss": 0.009374686609953642,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 2.019614577827169,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9866666793823242,
+      "std_val_acc": 0.0,
+      "mean_chi": 5.349735098122831,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 5.232737131276544,
+          "val_acc": 0.9866666793823242,
+          "train_loss": 0.013580880220979452,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 5.466733064969118,
+          "val_acc": 0.9866666793823242,
+          "train_loss": 0.012842960096895695,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.30294218667407535,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9749999940395355,
+      "std_val_acc": 0.015000015497207642,
+      "mean_chi": 5.418630504442658e-06,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 5.660936798380829e-06,
+          "val_acc": 0.9900000095367432,
+          "train_loss": 0.006039781263098121,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 5.176324210504489e-06,
+          "val_acc": 0.9599999785423279,
+          "train_loss": 0.007714071171358227,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.7068651022395092,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.01268236847207163,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.013186338984469892,
+          "val_acc": 1.0,
+          "train_loss": 0.003346104733645916,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.012178397959673367,
+          "val_acc": 1.0,
+          "train_loss": 0.0031926298746839167,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.0098072889135845,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.17415299744542953,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.18032791998181058,
+          "val_acc": 1.0,
+          "train_loss": 0.0035695886239409448,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.16797807490904848,
+          "val_acc": 1.0,
+          "train_loss": 0.0036379148252308367,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.3127494755876599,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9983333349227905,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 0.8588676111059067,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.8878649689952298,
+          "val_acc": 1.0,
+          "train_loss": 0.00377546614035964,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.8298702532165836,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.004057375155389309,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 2.019614577827169,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9733333587646484,
+      "std_val_acc": 0.0,
+      "mean_chi": 9.276165703305256,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 9.58761070921946,
+          "val_acc": 0.9733333587646484,
+          "train_loss": 0.0065376791171729565,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 8.964720697391053,
+          "val_acc": 0.9733333587646484,
+          "train_loss": 0.007167791482061148,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.30294218667407535,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.611666664481163,
+      "std_val_acc": 0.1483333259820938,
+      "mean_chi": 3.543190811340071e-11,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 3.494590624973443e-11,
+          "val_acc": 0.4633333384990692,
+          "train_loss": 1.019053304195404,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 3.5917909977066985e-11,
+          "val_acc": 0.7599999904632568,
+          "train_loss": 0.38716007471084596,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.7068651022395092,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9933333396911621,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 0.00037933258967495553,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.0003718473451632448,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.0025690590962767603,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.00038681783418666627,
+          "val_acc": 0.9900000095367432,
+          "train_loss": 0.0028623526683077215,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.0098072889135845,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9983333349227905,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 0.08602606397299564,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.08325338048938233,
+          "val_acc": 1.0,
+          "train_loss": 0.0017534938757307827,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.08879874745660896,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.001909129717387259,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.3127494755876599,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9950000047683716,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 1.081562175866936,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1.0421918144702313,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.001652993611060083,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1.1209325372636405,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 0.0017821532674133778,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 2.019614577827169,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.8366666436195374,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 43.82875543456957,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 42.29643973037813,
+          "val_acc": 0.8399999737739563,
+          "train_loss": 0.005330741591751576,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 45.361071138761005,
+          "val_acc": 0.8333333134651184,
+          "train_loss": 0.005328723508864641,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 0.30294218667407535,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.0006558264822338301,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.0006472186545806454,
+          "val_acc": 1.0,
+          "train_loss": 0.0019043724751099944,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.0006644343098870148,
+          "val_acc": 1.0,
+          "train_loss": 0.0019075184478424489,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 0.7068651022395092,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.05969312788834191,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.05873844576296098,
+          "val_acc": 1.0,
+          "train_loss": 0.002542736963368952,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.06064781001372284,
+          "val_acc": 1.0,
+          "train_loss": 0.0025931264739483596,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 1.0098072889135845,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.3067708483232948,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.30146958013384034,
+          "val_acc": 1.0,
+          "train_loss": 0.0028511643875390293,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.31207211651274935,
+          "val_acc": 1.0,
+          "train_loss": 0.0028599150944501163,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 1.3127494755876599,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.9338673677712912,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.9171842383994152,
+          "val_acc": 1.0,
+          "train_loss": 0.0030757897067815064,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.9505504971431672,
+          "val_acc": 1.0,
+          "train_loss": 0.0030287317698821426,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 2.019614577827169,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.996666669845581,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 5.289343910955127,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 5.192921216636195,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 0.0035552278161048887,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 5.38576660527406,
+          "val_acc": 1.0,
+          "train_loss": 0.003439252870157361,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.30294218667407535,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.996666669845581,
+      "std_val_acc": 0.0,
+      "mean_chi": 5.64202375410506e-06,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 5.666130779993532e-06,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.0011063577723689378,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 5.617916728216587e-06,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.0013145524309948087,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.7068651022395092,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.013192475639899321,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.013198417118113813,
+          "val_acc": 1.0,
+          "train_loss": 0.0007551166345365345,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.01318653416168483,
+          "val_acc": 1.0,
+          "train_loss": 0.0007450167264323682,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.0098072889135845,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.18167845951906275,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.18127345750800125,
+          "val_acc": 1.0,
+          "train_loss": 0.0008000318310223519,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.18208346153012422,
+          "val_acc": 1.0,
+          "train_loss": 0.0008166340587195009,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.3127494755876599,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.8993510816927199,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.8963927094141199,
+          "val_acc": 1.0,
+          "train_loss": 0.0008056481427047401,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.9023094539713199,
+          "val_acc": 1.0,
+          "train_loss": 0.000839538819855079,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 2.019614577827169,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9916666746139526,
+      "std_val_acc": 0.004999995231628418,
+      "mean_chi": 9.804977079789126,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 9.770423158221657,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.0011371016851626336,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 9.839531001356596,
+          "val_acc": 0.9866666793823242,
+          "train_loss": 0.0012028281344100833,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.30294218667407535,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.8649999797344208,
+      "std_val_acc": 0.028333336114883423,
+      "mean_chi": 3.6846496671316444e-11,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 3.7055781220502673e-11,
+          "val_acc": 0.8366666436195374,
+          "train_loss": 0.4485227346420288,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 3.6637212122130214e-11,
+          "val_acc": 0.8933333158493042,
+          "train_loss": 0.2981379047036171,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.7068651022395092,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9950000047683716,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 0.0003942381044555774,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.00039479428355281503,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.0004159784613875672,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.00039368192535833987,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 0.00040803870069794357,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.0098072889135845,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.09011362157140859,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.08996189515813244,
+          "val_acc": 1.0,
+          "train_loss": 0.00025394975091330707,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.09026534798468473,
+          "val_acc": 1.0,
+          "train_loss": 0.0002857801649952307,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.3127494755876599,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 1.1407772131246565,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1.1423429288604878,
+          "val_acc": 1.0,
+          "train_loss": 0.00024000599078135564,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1.1392114973888254,
+          "val_acc": 1.0,
+          "train_loss": 0.0002671252470463514,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "tanh",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 2.019614577827169,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.0098072889135845,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9766666889190674,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 47.08166677621794,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 47.280104260706615,
+          "val_acc": 0.9733333587646484,
+          "train_loss": 0.0006419707962777466,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 46.88322929172928,
+          "val_acc": 0.9800000190734863,
+          "train_loss": 0.0006959328020457178,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 0.594442261059399,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.004722401004778967,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.004666946541785575,
+          "val_acc": 1.0,
+          "train_loss": 0.0017407667241059245,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.00477785546777236,
+          "val_acc": 1.0,
+          "train_loss": 0.0016882564756087958,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 1.3870319424719308,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.996666669845581,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 1.7115099758933177,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1.6894493080116342,
+          "val_acc": 1.0,
+          "train_loss": 0.004507154645398259,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1.733570643775001,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 0.004297680454328656,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 1.98147420353133,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9550000131130219,
+      "std_val_acc": 0.015000015497207642,
+      "mean_chi": 15.903104814366422,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 15.673611409534276,
+          "val_acc": 0.9700000286102295,
+          "train_loss": 0.008560039382427932,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 16.13259821919857,
+          "val_acc": 0.9399999976158142,
+          "train_loss": 0.007598268985748291,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 2.575916464590729,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.8816666603088379,
+      "std_val_acc": 0.008333325386047363,
+      "mean_chi": 77.22966917737365,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 76.09020932629772,
+          "val_acc": 0.8899999856948853,
+          "train_loss": 0.006117992964573204,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 78.36912902844958,
+          "val_acc": 0.8733333349227905,
+          "train_loss": 0.004994650254957378,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 3.96294840706266,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.8183333277702332,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 1014.3989149246645,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 999.3475284473726,
+          "val_acc": 0.8199999928474426,
+          "train_loss": 0.0008445090148597956,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1029.4503014019563,
+          "val_acc": 0.8166666626930237,
+          "train_loss": 0.0007550600159447641,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.594442261059399,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.996666669845581,
+      "std_val_acc": 0.0,
+      "mean_chi": 3.616663205978856e-05,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 3.7948367744602405e-05,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.00010288987577951047,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 3.4384896374974715e-05,
+          "val_acc": 0.996666669845581,
+          "train_loss": 9.740796376718208e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.3870319424719308,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9850000143051147,
+      "std_val_acc": 0.008333325386047363,
+      "mean_chi": 1.3913658754591218,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1.464707145380956,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 0.0006595928454771638,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1.3180246055372877,
+          "val_acc": 0.9766666889190674,
+          "train_loss": 0.0007156146079069003,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.98147420353133,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.8683333396911621,
+      "std_val_acc": 0.014999985694885254,
+      "mean_chi": 61.71252529213396,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 64.55470062770654,
+          "val_acc": 0.8833333253860474,
+          "train_loss": 0.0030639511765912174,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 58.87034995656139,
+          "val_acc": 0.8533333539962769,
+          "train_loss": 0.003001672634854913,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 2.575916464590729,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.7650000154972076,
+      "std_val_acc": 0.03833332657814026,
+      "mean_chi": 839.6185245240772,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 878.0791520015093,
+          "val_acc": 0.8033333420753479,
+          "train_loss": 0.0003366815129993483,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 801.1578970466452,
+          "val_acc": 0.7266666889190674,
+          "train_loss": 0.00021350289025576786,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 3.96294840706266,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.7616666853427887,
+      "std_val_acc": 0.025000005960464478,
+      "mean_chi": 60933.540493384266,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 63728.01954766846,
+          "val_acc": 0.7866666913032532,
+          "train_loss": 0.0004423500679614278,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 58139.06143910007,
+          "val_acc": 0.7366666793823242,
+          "train_loss": 1.7005313553641877e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.594442261059399,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9516666531562805,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 1.954087292205696e-10,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 1.9361958778418565e-10,
+          "val_acc": 0.949999988079071,
+          "train_loss": 0.011652372241951526,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 1.9719787065695356e-10,
+          "val_acc": 0.95333331823349,
+          "train_loss": 0.00120714531512931,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.3870319424719308,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9483333230018616,
+      "std_val_acc": 0.004999995231628418,
+      "mean_chi": 0.5849310952386706,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.6068248822504401,
+          "val_acc": 0.9433333277702332,
+          "train_loss": 6.543382532981923e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.5630373082269012,
+          "val_acc": 0.95333331823349,
+          "train_loss": 0.00010111864721693565,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.98147420353133,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.6433333158493042,
+      "std_val_acc": 0.006666660308837891,
+      "mean_chi": 1867.539179234287,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1843.1347830207962,
+          "val_acc": 0.6366666555404663,
+          "train_loss": 0.0008350513700861484,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1891.9435754477777,
+          "val_acc": 0.6499999761581421,
+          "train_loss": 0.0005121281632455066,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 2.575916464590729,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.6800000071525574,
+      "std_val_acc": 0.006666660308837891,
+      "mean_chi": 341570.5256146011,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 337216.1783254416,
+          "val_acc": 0.6733333468437195,
+          "train_loss": 0.456407685438171,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 345924.8729037605,
+          "val_acc": 0.6866666674613953,
+          "train_loss": 0.40241350968681217,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 3.96294840706266,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.57833331823349,
+      "std_val_acc": 0.004999995231628418,
+      "mean_chi": 1827554588.445437,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 1804575695.5889904,
+          "val_acc": 0.5733333230018616,
+          "train_loss": 17.02894010543823,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 1850533481.3018837,
+          "val_acc": 0.5833333134651184,
+          "train_loss": 33.6253219127655,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 0.594442261059399,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.004676935738444609,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.00463497026369073,
+          "val_acc": 1.0,
+          "train_loss": 0.0005519009922863915,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.0047189012131984885,
+          "val_acc": 1.0,
+          "train_loss": 0.0005573000438744202,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 1.3870319424719308,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9983333349227905,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 1.6920885014069347,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1.6749060372240594,
+          "val_acc": 1.0,
+          "train_loss": 0.0014291357481852173,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1.70927096558981,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.0014868115773424505,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 1.98147420353133,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9850000143051147,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 15.711157625564924,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 15.529585107450776,
+          "val_acc": 0.9866666793823242,
+          "train_loss": 0.0015880658873356878,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 15.892730143679072,
+          "val_acc": 0.9833333492279053,
+          "train_loss": 0.0017450046609155834,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 2.575916464590729,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9516666531562805,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 76.31736694968393,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 75.41226981100107,
+          "val_acc": 0.95333331823349,
+          "train_loss": 0.0004885933420155197,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 77.2224640883668,
+          "val_acc": 0.949999988079071,
+          "train_loss": 0.0005385014461353421,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 3.96294840706266,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9283333420753479,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 1001.4244423723803,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 989.4524001863912,
+          "val_acc": 0.9300000071525574,
+          "train_loss": 1.3011355565595296e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1013.3964845583696,
+          "val_acc": 0.9266666769981384,
+          "train_loss": 9.12020707346528e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.594442261059399,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 3.778249498820002e-05,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 3.810750000761657e-05,
+          "val_acc": 1.0,
+          "train_loss": 5.7165248648516355e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 3.7457489968783466e-05,
+          "val_acc": 1.0,
+          "train_loss": 1.965367951584085e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.3870319424719308,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9916666746139526,
+      "std_val_acc": 0.008333325386047363,
+      "mean_chi": 1.4467399458994272,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1.462140206242377,
+          "val_acc": 1.0,
+          "train_loss": 8.114932825264987e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1.4313396855564775,
+          "val_acc": 0.9833333492279053,
+          "train_loss": 0.00012377824241411873,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.98147420353133,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9633333384990692,
+      "std_val_acc": 0.006666690111160278,
+      "mean_chi": 64.3826464989652,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 64.74902106414937,
+          "val_acc": 0.9700000286102295,
+          "train_loss": 0.00023569819750264288,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 64.01627193378103,
+          "val_acc": 0.9566666483879089,
+          "train_loss": 0.0002098259428748861,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 2.575916464590729,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9383333325386047,
+      "std_val_acc": 0.011666655540466309,
+      "mean_chi": 874.7425207036708,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 879.4899141649854,
+          "val_acc": 0.949999988079071,
+          "train_loss": 4.195006570739679e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 869.9951272423564,
+          "val_acc": 0.9266666769981384,
+          "train_loss": 4.974976619109839e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 3.96294840706266,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9350000023841858,
+      "std_val_acc": 0.004999995231628418,
+      "mean_chi": 63436.550985208036,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 63780.748284088855,
+          "val_acc": 0.9399999976158142,
+          "train_loss": 0.007523085115099093,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 63092.35368632722,
+          "val_acc": 0.9300000071525574,
+          "train_loss": 0.04271478652954101,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.594442261059399,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.973333328962326,
+      "std_val_acc": 0.013333350419998169,
+      "mean_chi": 2.0393898801043062e-10,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 2.0598064808412927e-10,
+          "val_acc": 0.9599999785423279,
+          "train_loss": 0.0021544692397583278,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 2.01897327936732e-10,
+          "val_acc": 0.9866666793823242,
+          "train_loss": 0.0003405567622394301,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.3870319424719308,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9866666793823242,
+      "std_val_acc": 0.006666660308837891,
+      "mean_chi": 0.5893015821404068,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.6085642851418919,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 1.9195596360077614e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.5700388791389219,
+          "val_acc": 0.9800000190734863,
+          "train_loss": 1.593618781043915e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.98147420353133,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9316666722297668,
+      "std_val_acc": 0.021666646003723145,
+      "mean_chi": 1948.9004330876535,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1962.022357679337,
+          "val_acc": 0.95333331823349,
+          "train_loss": 0.09664839688157371,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1935.77850849597,
+          "val_acc": 0.9100000262260437,
+          "train_loss": 2.679397203948497e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 2.575916464590729,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9300000071525574,
+      "std_val_acc": 0.016666650772094727,
+      "mean_chi": 355336.38909323595,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 357740.20021111297,
+          "val_acc": 0.9466666579246521,
+          "train_loss": 0.6017801386733481,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 352932.5779753589,
+          "val_acc": 0.9133333563804626,
+          "train_loss": 0.5369887116365135,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "gelu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 3.96294840706266,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.98147420353133,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.8916666805744171,
+      "std_val_acc": 0.015000015497207642,
+      "mean_chi": 1900339535.7962675,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 1913321376.6989322,
+          "val_acc": 0.9066666960716248,
+          "train_loss": 43.55788803100586,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 1887357694.8936028,
+          "val_acc": 0.8766666650772095,
+          "train_loss": 78.91523971557618,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 0.597780638903786,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.0038101460242872965,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.003761099478678523,
+          "val_acc": 1.0,
+          "train_loss": 0.002017677144613117,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.00385919256989607,
+          "val_acc": 1.0,
+          "train_loss": 0.001962799543980509,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 1.3948214907755005,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9983333349227905,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 1.3046416534185195,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1.290384139330004,
+          "val_acc": 1.0,
+          "train_loss": 0.004333648993633687,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1.3188991675070352,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.004075758601538837,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 1.9926021296792866,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9583333432674408,
+      "std_val_acc": 0.015000015497207642,
+      "mean_chi": 14.536358012450684,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 14.347752816779744,
+          "val_acc": 0.9733333587646484,
+          "train_loss": 0.007813502242788673,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 14.724963208121622,
+          "val_acc": 0.9433333277702332,
+          "train_loss": 0.0069676042068749664,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 2.5903827685830727,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.875,
+      "std_val_acc": 0.011666655540466309,
+      "mean_chi": 75.94326257275094,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 74.87737014834197,
+          "val_acc": 0.8866666555404663,
+          "train_loss": 0.0058253841008991,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 77.0091549971599,
+          "val_acc": 0.8633333444595337,
+          "train_loss": 0.004822576930746436,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 3,
+      "sigma_w": 3.9852042593585733,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.8116666674613953,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 1040.8796495674724,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1025.651358881308,
+          "val_acc": 0.8100000023841858,
+          "train_loss": 0.000831154860497918,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1056.107940253637,
+          "val_acc": 0.8133333325386047,
+          "train_loss": 0.0007614110159920529,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.597780638903786,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9950000047683716,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 2.960315351334603e-05,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 3.102279664181194e-05,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.0001731487544020638,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 2.8183510384880122e-05,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 0.0001848072453867644,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.3948214907755005,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9916666746139526,
+      "std_val_acc": 0.008333325386047363,
+      "mean_chi": 0.6860166356050152,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.7267615178641913,
+          "val_acc": 1.0,
+          "train_loss": 0.0004511776613071561,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.6452717533458392,
+          "val_acc": 0.9833333492279053,
+          "train_loss": 0.0005014829948777333,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.9926021296792866,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.8650000095367432,
+      "std_val_acc": 0.0183333158493042,
+      "mean_chi": 56.795905756682956,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 59.54933669159382,
+          "val_acc": 0.8833333253860474,
+          "train_loss": 0.0028003711369819937,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 54.042474821772096,
+          "val_acc": 0.846666693687439,
+          "train_loss": 0.0027355766389518974,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 2.5903827685830727,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.7583333253860474,
+      "std_val_acc": 0.021666646003723145,
+      "mean_chi": 849.0928578015407,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 889.5100141477672,
+          "val_acc": 0.7799999713897705,
+          "train_loss": 0.00026617219555191696,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 808.6757014553142,
+          "val_acc": 0.7366666793823242,
+          "train_loss": 0.00021243809605948628,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 3.9852042593585733,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.7516666948795319,
+      "std_val_acc": 0.03166666626930237,
+      "mean_chi": 64091.44399354233,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 67042.50431420802,
+          "val_acc": 0.7833333611488342,
+          "train_loss": 0.0004834489146002596,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 61140.38367287663,
+          "val_acc": 0.7200000286102295,
+          "train_loss": 0.0013759550381089892,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.597780638903786,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9350000023841858,
+      "std_val_acc": 0.021666646003723145,
+      "mean_chi": 1.691612694322715e-10,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 1.6739013727147186e-10,
+          "val_acc": 0.9133333563804626,
+          "train_loss": 0.02388161248527467,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 1.7093240159307114e-10,
+          "val_acc": 0.9566666483879089,
+          "train_loss": 0.0009815944125875832,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.3948214907755005,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9716666638851166,
+      "std_val_acc": 0.005000025033950806,
+      "mean_chi": 0.0443010802121954,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.045764014580803036,
+          "val_acc": 0.9766666889190674,
+          "train_loss": 8.03315414032113e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.04283814584358776,
+          "val_acc": 0.9666666388511658,
+          "train_loss": 5.6978404063556806e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.9926021296792866,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.6099999845027924,
+      "std_val_acc": 0.016666680574417114,
+      "mean_chi": 1847.3079704193603,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1827.3689137857252,
+          "val_acc": 0.5933333039283752,
+          "train_loss": 0.0007744211063254625,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1867.2470270529955,
+          "val_acc": 0.6266666650772095,
+          "train_loss": 0.00048264431243296715,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 2.5903827685830727,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.6649999916553497,
+      "std_val_acc": 0.015000015497207642,
+      "mean_chi": 366572.0906061374,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 362799.5725108239,
+          "val_acc": 0.6499999761581421,
+          "train_loss": 0.4549645759165287,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 370344.60870145087,
+          "val_acc": 0.6800000071525574,
+          "train_loss": 0.5933794643623514,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 3.9852042593585733,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.6116666793823242,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 2034107165.5173993,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 2008886821.1645186,
+          "val_acc": 0.6100000143051147,
+          "train_loss": 40.64546775942047,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 2059327509.87028,
+          "val_acc": 0.6133333444595337,
+          "train_loss": 38.399431991577146,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 0.597780638903786,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.003770052621087777,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.003732258224713651,
+          "val_acc": 1.0,
+          "train_loss": 0.0007330151885980741,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.0038078470174619026,
+          "val_acc": 1.0,
+          "train_loss": 0.0007450066681485623,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 1.3948214907755005,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9983333349227905,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 1.2908562555942755,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1.2801120514605542,
+          "val_acc": 1.0,
+          "train_loss": 0.0014222743804566563,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1.3016004597279969,
+          "val_acc": 0.996666669845581,
+          "train_loss": 0.0014387886156328022,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 1.9926021296792866,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9866666793823242,
+      "std_val_acc": 0.006666660308837891,
+      "mean_chi": 14.353262683507749,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 14.206930829014821,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 0.0014984015026129783,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 14.499594538000677,
+          "val_acc": 0.9800000190734863,
+          "train_loss": 0.0015949986991472542,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 2.5903827685830727,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.95333331823349,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 74.97449379062076,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 74.13755981585881,
+          "val_acc": 0.949999988079071,
+          "train_loss": 0.00048668368835933504,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 75.81142776538272,
+          "val_acc": 0.9566666483879089,
+          "train_loss": 0.0005019673175411299,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 3,
+      "sigma_w": 3.9852042593585733,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.925000011920929,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 1026.957872939849,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1014.890718889999,
+          "val_acc": 0.9266666769981384,
+          "train_loss": 1.402530406267033e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1039.0250269896992,
+          "val_acc": 0.9233333468437195,
+          "train_loss": 1.0354581036153832e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.597780638903786,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9983333349227905,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 3.0900031631373884e-05,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 3.112987331553281e-05,
+          "val_acc": 1.0,
+          "train_loss": 1.181732578743322e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 3.0670189947214956e-05,
+          "val_acc": 0.996666669845581,
+          "train_loss": 8.206324400816811e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.3948214907755005,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 1.0,
+      "std_val_acc": 0.0,
+      "mean_chi": 0.7125773856371961,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.7238268730527254,
+          "val_acc": 1.0,
+          "train_loss": 4.029661668027984e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.7013278982216667,
+          "val_acc": 1.0,
+          "train_loss": 6.954522468731739e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.9926021296792866,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9566666483879089,
+      "std_val_acc": 0.009999990463256836,
+      "mean_chi": 59.048709093772295,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 59.50357929947416,
+          "val_acc": 0.9666666388511658,
+          "train_loss": 0.0002171432483009994,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 58.59383888807043,
+          "val_acc": 0.9466666579246521,
+          "train_loss": 0.00019820821180474013,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 2.5903827685830727,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9216666519641876,
+      "std_val_acc": 0.025000005960464478,
+      "mean_chi": 884.6997483931575,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 890.1072306674932,
+          "val_acc": 0.9466666579246521,
+          "train_loss": 5.514280775287261e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 879.2922661188218,
+          "val_acc": 0.8966666460037231,
+          "train_loss": 6.075277724448824e-06,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 3.9852042593585733,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9383333325386047,
+      "std_val_acc": 0.021666646003723145,
+      "mean_chi": 66670.774397465,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 67045.07633099656,
+          "val_acc": 0.9599999785423279,
+          "train_loss": 0.009467681305139308,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 66296.47246393342,
+          "val_acc": 0.9166666865348816,
+          "train_loss": 0.0,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.597780638903786,
+      "sigma_w_multiplier": 0.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "ordered",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9599999785423279,
+      "std_val_acc": 0.006666660308837891,
+      "mean_chi": 1.763852356479873e-10,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "ordered",
+          "chi": 1.7794554505381197e-10,
+          "val_acc": 0.9666666388511658,
+          "train_loss": 0.00034939883480547,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "ordered",
+          "chi": 1.7482492624216267e-10,
+          "val_acc": 0.95333331823349,
+          "train_loss": 0.06694013141095638,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.3948214907755005,
+      "sigma_w_multiplier": 0.7,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9900000095367432,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 0.04518469489114836,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 0.0467759380774797,
+          "val_acc": 0.9866666793823242,
+          "train_loss": 1.0849041086657962e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 0.043593451704817016,
+          "val_acc": 0.9933333396911621,
+          "train_loss": 2.029640195360116e-05,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.9926021296792866,
+      "sigma_w_multiplier": 1.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "critical",
+      "majority_training_success": true,
+      "prediction_correct": true,
+      "mean_val_acc": 0.9333333373069763,
+      "std_val_acc": 0.0033333301544189453,
+      "mean_chi": 1920.5414059558443,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "critical",
+          "chi": 1937.2301892496057,
+          "val_acc": 0.9366666674613953,
+          "train_loss": 0.0229491146419889,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "critical",
+          "chi": 1903.8526226620827,
+          "val_acc": 0.9300000071525574,
+          "train_loss": 0.07274372233296163,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 2.5903827685830727,
+      "sigma_w_multiplier": 1.3,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.9416666924953461,
+      "std_val_acc": 0.028333336114883423,
+      "mean_chi": 381658.2658975963,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 384486.18608240254,
+          "val_acc": 0.9700000286102295,
+          "train_loss": 1.243577283869187,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 378830.3457127901,
+          "val_acc": 0.9133333563804626,
+          "train_loss": 0.5346094623208046,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    },
+    {
+      "activation": "silu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 3.9852042593585733,
+      "sigma_w_multiplier": 2.0,
+      "sw_critical": 1.9926021296792866,
+      "majority_phase": "chaotic",
+      "majority_training_success": true,
+      "prediction_correct": false,
+      "mean_val_acc": 0.8949999809265137,
+      "std_val_acc": 0.0016666650772094727,
+      "mean_chi": 2113346554.599914,
+      "per_seed": [
+        {
+          "seed": 42,
+          "phase": "chaotic",
+          "chi": 2128170362.4027395,
+          "val_acc": 0.8966666460037231,
+          "train_loss": 47.26302642822266,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        },
+        {
+          "seed": 123,
+          "phase": "chaotic",
+          "chi": 2098522746.7970886,
+          "val_acc": 0.8933333158493042,
+          "train_loss": 97.21091156005859,
+          "training_success": true,
+          "training_failed": false,
+          "failure_reason": null
+        }
+      ]
+    }
+  ],
+  "ng_comparison": {
+    "ng_overall_accuracy": 0.964,
+    "ng_n_configs": 336,
+    "standard_overall_accuracy": 0.518,
+    "improvement": "+44.6%",
+    "ng_by_depth": {
+      "3": 0.964,
+      "5": 0.964,
+      "10": 0.964,
+      "20": 0.964
+    },
+    "ng_by_activation": {
+      "relu": 1.0,
+      "gelu": 1.0,
+      "silu": 0.929,
+      "tanh": 0.929
+    },
+    "note": "Standard PhaseKit on expanded 336-config test set shows 51.8% (different from original 75% on 120 configs due to harder test set). NG achieves 96.4% on same expanded set."
+  }
+}

@@ -976,5 +976,9 @@
       "exploded_count": 2,
       "converged_count": 0
     }
-  ]
+  ],
+  "ng_extension": {
+    "improved_by": "PhaseKit-NG",
+    "see": "experiments/results/ng_benchmark/ng_results.json"
+  }
 }

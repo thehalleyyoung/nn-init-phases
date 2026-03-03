@@ -13,10 +13,11 @@ import json
 import numpy as np
 import time
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'implementation', 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from baselines import (
     xavier_init, kaiming_init, phasekit_init, lsuv_init,
+    calibrated_phasekit_init,
     data_dependent_init, train_mlp, apply_activation, activation_derivative,
     gradient_norm_diagnostic,
 )
@@ -161,7 +162,7 @@ def run_baseline_comparison():
     n_seeds = 2
     input_dim = 10
 
-    methods = ["xavier", "kaiming", "phasekit", "lsuv", "metainit", "gradinit"]
+    methods = ["xavier", "kaiming", "phasekit", "calibrated_phasekit", "lsuv", "metainit", "gradinit"]
     all_results = []
 
     total_configs = len(depths) * len(widths) * len(activations)
@@ -201,6 +202,8 @@ def run_baseline_comparison():
                                 init = kaiming_init(dims, act, seed=seed)
                             elif method == "phasekit":
                                 init = phasekit_init(dims, act, seed=seed)
+                            elif method == "calibrated_phasekit":
+                                init = calibrated_phasekit_init(dims, act, X_calib, seed=seed)
                             elif method == "lsuv":
                                 init = lsuv_init(dims, act, X_calib, seed=seed)
                             elif method == "metainit":

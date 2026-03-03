@@ -101,4 +101,4 @@ The system runs entirely on CPU because it never trains a neural network — it 
 
 ## Slug
 
-`finite-width-phase-diagrams`
+`nn-init-phases`

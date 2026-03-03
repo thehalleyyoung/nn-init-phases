@@ -274,5 +274,22 @@
         "grounding_claims": 62
       }
     }
-  ]
+  ],
+  "ng_completion": {
+    "status": "COMPLETED",
+    "date": "2026-03-02",
+    "results": {
+      "phase_accuracy_overall": "96.4% (was 75%)",
+      "depth_10_accuracy": "96.4% (was 55%)",
+      "init_wins_combined": "24/32 (75%)",
+      "divergence_failures": 0,
+      "novel_contributions": [
+        "Coupled (variance, kurtosis) recursion (Eq. ng-var, ng-kurt)",
+        "Kurtosis-corrected effective chi (Eq. chi-eff)",
+        "Activation-adaptive critical thresholds",
+        "Empirical-Bayesian phase calibration",
+        "Gradient-searched initialization (GS-CaliKit)"
+      ]
+    }
+  }
 }

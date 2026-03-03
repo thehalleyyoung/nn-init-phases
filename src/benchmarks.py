@@ -358,7 +358,7 @@ def compare_with_published(
         rows=rows,
         model_name=model_name,
         dataset_name=dataset,
-        source="finite-width-phase-diagrams baselines v0.2",
+        source="nn-init-phases baselines v0.2",
     )
 
 

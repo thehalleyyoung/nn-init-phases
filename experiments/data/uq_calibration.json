@@ -1,0 +1,754 @@
+{
+  "summary": {
+    "ece": 0.27000000000000013,
+    "mce": 0.8,
+    "brier_score": 0.131,
+    "n_predictions": 80,
+    "bin_details": [
+      {
+        "bin": "(0.1, 0.2]",
+        "avg_confidence": 0.2,
+        "avg_accuracy": 1.0,
+        "count": 8,
+        "gap": 0.8
+      },
+      {
+        "bin": "(0.2, 0.3]",
+        "avg_confidence": 0.3,
+        "avg_accuracy": 1.0,
+        "count": 8,
+        "gap": 0.7
+      },
+      {
+        "bin": "(0.8, 0.9]",
+        "avg_confidence": 0.8499999999999999,
+        "avg_accuracy": 1.0,
+        "count": 64,
+        "gap": 0.15000000000000013
+      }
+    ],
+    "timestamp": "2026-03-02T07:11:20.411629"
+  },
+  "predictions": [
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.7071067811865475
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.131370849898476
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.414213562373095
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.6970562748477138
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 2.1213203435596424
+    },
+    {
+      "predicted_prob": 0.3,
+      "actual": 1.0,
+      "phase": "ordered",
+      "activation": "relu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.7071067811865475
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.131370849898476
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.414213562373095
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.6970562748477138
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 2.1213203435596424
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.7071067811865475
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.131370849898476
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.414213562373095
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.6970562748477138
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 2.1213203435596424
+    },
+    {
+      "predicted_prob": 0.3,
+      "actual": 1.0,
+      "phase": "ordered",
+      "activation": "relu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.7071067811865475
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.131370849898476
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.414213562373095
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.6970562748477138
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "relu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 2.1213203435596424
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.5049036444567923
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.8078458311308676
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.0098072889135845
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.2117687466963014
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.5147109333703768
+    },
+    {
+      "predicted_prob": 0.3,
+      "actual": 1.0,
+      "phase": "ordered",
+      "activation": "tanh",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.5049036444567923
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.8078458311308676
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.0098072889135845
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.2117687466963014
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.5147109333703768
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.5049036444567923
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.8078458311308676
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.0098072889135845
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.2117687466963014
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.5147109333703768
+    },
+    {
+      "predicted_prob": 0.3,
+      "actual": 1.0,
+      "phase": "ordered",
+      "activation": "tanh",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.5049036444567923
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.8078458311308676
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.0098072889135845
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.2117687466963014
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "tanh",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.5147109333703768
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.990737101765665
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.585179362825064
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.98147420353133
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 2.377769044237596
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 2.972211305296995
+    },
+    {
+      "predicted_prob": 0.3,
+      "actual": 1.0,
+      "phase": "ordered",
+      "activation": "gelu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.990737101765665
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.585179362825064
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.98147420353133
+    },
+    {
+      "predicted_prob": 0.2,
+      "actual": 1.0,
+      "phase": "chaotic",
+      "activation": "gelu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 2.377769044237596
+    },
+    {
+      "predicted_prob": 0.2,
+      "actual": 1.0,
+      "phase": "chaotic",
+      "activation": "gelu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 2.972211305296995
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.990737101765665
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.585179362825064
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.98147420353133
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 2.377769044237596
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 2.972211305296995
+    },
+    {
+      "predicted_prob": 0.3,
+      "actual": 1.0,
+      "phase": "ordered",
+      "activation": "gelu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.990737101765665
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.585179362825064
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "gelu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.98147420353133
+    },
+    {
+      "predicted_prob": 0.2,
+      "actual": 1.0,
+      "phase": "chaotic",
+      "activation": "gelu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 2.377769044237596
+    },
+    {
+      "predicted_prob": 0.2,
+      "actual": 1.0,
+      "phase": "chaotic",
+      "activation": "gelu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 2.972211305296995
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 0.9963010648396433
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.5940817037434294
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 1.9926021296792866
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 2.391122555615144
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 128,
+      "depth": 5,
+      "sigma_w": 2.98890319451893
+    },
+    {
+      "predicted_prob": 0.3,
+      "actual": 1.0,
+      "phase": "ordered",
+      "activation": "silu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 0.9963010648396433
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.5940817037434294
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 1.9926021296792866
+    },
+    {
+      "predicted_prob": 0.2,
+      "actual": 1.0,
+      "phase": "chaotic",
+      "activation": "silu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 2.391122555615144
+    },
+    {
+      "predicted_prob": 0.2,
+      "actual": 1.0,
+      "phase": "chaotic",
+      "activation": "silu",
+      "width": 128,
+      "depth": 10,
+      "sigma_w": 2.98890319451893
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 0.9963010648396433
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.5940817037434294
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 1.9926021296792866
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 2.391122555615144
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 256,
+      "depth": 5,
+      "sigma_w": 2.98890319451893
+    },
+    {
+      "predicted_prob": 0.3,
+      "actual": 1.0,
+      "phase": "ordered",
+      "activation": "silu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 0.9963010648396433
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.5940817037434294
+    },
+    {
+      "predicted_prob": 0.85,
+      "actual": 1.0,
+      "phase": "critical",
+      "activation": "silu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 1.9926021296792866
+    },
+    {
+      "predicted_prob": 0.2,
+      "actual": 1.0,
+      "phase": "chaotic",
+      "activation": "silu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 2.391122555615144
+    },
+    {
+      "predicted_prob": 0.2,
+      "actual": 1.0,
+      "phase": "chaotic",
+      "activation": "silu",
+      "width": 256,
+      "depth": 10,
+      "sigma_w": 2.98890319451893
+    }
+  ]
+}

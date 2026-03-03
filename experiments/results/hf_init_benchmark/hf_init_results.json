@@ -1,0 +1,129 @@
+{
+  "n_configs": 12,
+  "pk_wins": 10,
+  "ties": 0,
+  "hf_wins": 2,
+  "details": [
+    {
+      "name": "GPT2-2L-64d",
+      "default_loss": 0.02033,
+      "pk_loss": 0.00312,
+      "winner": "PK",
+      "default_sigma": 0.02,
+      "pk_sigma_attn": 0.18263,
+      "pk_sigma_attn_out": 0.09132,
+      "pk_sigma_ffn": 0.18263,
+      "pk_sigma_ffn_out": 0.09132
+    },
+    {
+      "name": "GPT2-4L-64d",
+      "default_loss": 0.02168,
+      "pk_loss": 0.00318,
+      "winner": "PK",
+      "default_sigma": 0.02,
+      "pk_sigma_attn": 0.18255,
+      "pk_sigma_attn_out": 0.06454,
+      "pk_sigma_ffn": 0.18255,
+      "pk_sigma_ffn_out": 0.06454
+    },
+    {
+      "name": "GPT2-6L-128d",
+      "default_loss": 0.00226,
+      "pk_loss": 0.00011,
+      "winner": "PK",
+      "default_sigma": 0.02,
+      "pk_sigma_attn": 0.13098,
+      "pk_sigma_attn_out": 0.03781,
+      "pk_sigma_ffn": 0.13098,
+      "pk_sigma_ffn_out": 0.03781
+    },
+    {
+      "name": "GPT2-12L-128d",
+      "default_loss": 0.00227,
+      "pk_loss": 0.00015,
+      "winner": "PK",
+      "default_sigma": 0.02,
+      "pk_sigma_attn": 0.13281,
+      "pk_sigma_attn_out": 0.02711,
+      "pk_sigma_ffn": 0.13281,
+      "pk_sigma_ffn_out": 0.02711
+    },
+    {
+      "name": "GPT2-4L-highInit",
+      "default_loss": 0.01375,
+      "pk_loss": 0.00318,
+      "winner": "PK",
+      "default_sigma": 0.1,
+      "pk_sigma_attn": 0.18255,
+      "pk_sigma_attn_out": 0.06454,
+      "pk_sigma_ffn": 0.18255,
+      "pk_sigma_ffn_out": 0.06454
+    },
+    {
+      "name": "GPT2-4L-lowInit",
+      "default_loss": 0.02204,
+      "pk_loss": 0.00373,
+      "winner": "PK",
+      "default_sigma": 0.002,
+      "pk_sigma_attn": 0.18255,
+      "pk_sigma_attn_out": 0.06454,
+      "pk_sigma_ffn": 0.18255,
+      "pk_sigma_ffn_out": 0.06454
+    },
+    {
+      "name": "BERT-2L-64d",
+      "default_loss": 0.02223,
+      "pk_loss": 0.03809,
+      "winner": "HF",
+      "default_sigma": 0.02,
+      "pk_sigma_attn": 0.18263,
+      "pk_sigma_ffn": 0.18263
+    },
+    {
+      "name": "BERT-6L-128d",
+      "default_loss": 0.00228,
+      "pk_loss": 0.02274,
+      "winner": "HF",
+      "default_sigma": 0.02,
+      "pk_sigma_attn": 0.13098,
+      "pk_sigma_ffn": 0.13098
+    },
+    {
+      "name": "LLaMA-2L-64d",
+      "default_loss": 0.01301,
+      "pk_loss": 0.00031,
+      "winner": "PK",
+      "default_sigma": 0.02,
+      "pk_sigma_attn": 0.1997,
+      "pk_sigma_ffn": 0.1997
+    },
+    {
+      "name": "LLaMA-4L-64d",
+      "default_loss": 0.01411,
+      "pk_loss": 0.0002,
+      "winner": "PK",
+      "default_sigma": 0.02,
+      "pk_sigma_attn": 0.19978,
+      "pk_sigma_ffn": 0.19978
+    },
+    {
+      "name": "ViT-2L-64d",
+      "default_loss": 0.00589,
+      "pk_loss": 0.0008,
+      "winner": "PK",
+      "default_sigma": 0.02,
+      "pk_sigma_attn": 0.18263,
+      "pk_sigma_ffn": 0.18263
+    },
+    {
+      "name": "ViT-4L-64d",
+      "default_loss": 0.00708,
+      "pk_loss": 0.00042,
+      "winner": "PK",
+      "default_sigma": 0.02,
+      "pk_sigma_attn": 0.18255,
+      "pk_sigma_ffn": 0.18255
+    }
+  ],
+  "timestamp": "2026-03-02T18:25:42"
+}

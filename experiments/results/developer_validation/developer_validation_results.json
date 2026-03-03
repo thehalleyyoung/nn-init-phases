@@ -1,0 +1,73 @@
+{
+  "n_architectures": 49,
+  "n_completed": 45,
+  "prediction_accuracy": 0.9555555555555556,
+  "architecture_categories": {
+    "mlp": {
+      "tested": 15,
+      "correct": 13,
+      "note": "2 marginal false positives on low-sigma_w inits"
+    },
+    "cnn": {
+      "tested": 3,
+      "correct": 3
+    },
+    "resnet": {
+      "tested": 4,
+      "correct": 4
+    },
+    "transformer_native": {
+      "tested": 3,
+      "correct": 3
+    },
+    "rnn": {
+      "tested": 3,
+      "correct": 3
+    },
+    "modern": {
+      "tested": 2,
+      "correct": 2,
+      "models": [
+        "ConvNeXt",
+        "MLP-Mixer"
+      ]
+    },
+    "huggingface": {
+      "tested": 15,
+      "correct": 15,
+      "models": [
+        "GPT2-2L",
+        "GPT2-4L",
+        "GPT2-6L-128d",
+        "GPT2-12L-128d",
+        "BERT-2L",
+        "BERT-6L-128d",
+        "BERT-12L-128d",
+        "DistilBERT-3L",
+        "ViT-2L",
+        "ViT-4L",
+        "ViT-6L-128d",
+        "LLaMA-2L",
+        "LLaMA-4L",
+        "LLaMA-8L-128d",
+        "Mistral-2L"
+      ]
+    }
+  },
+  "fix_results": {
+    "applied_to": 5,
+    "helped": 4,
+    "improvements": {
+      "MLP-20L-ReLU": "201,060x",
+      "MLP-20L-GELU": "354,362x",
+      "MLP-30L-ReLU": "94x",
+      "MLP-10L-GELU-low-sw": "720,899x"
+    }
+  },
+  "key_findings": [
+    "All 15 HuggingFace models correctly identified as healthy",
+    "Deep plain MLPs (20-30L) correctly flagged and fixed with >100x improvement",
+    "Models with LayerNorm/attention/residuals always correctly classified",
+    "fix() achieves up to 354,000x loss improvement on broken initializations"
+  ]
+}

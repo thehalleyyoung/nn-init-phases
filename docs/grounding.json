@@ -1,6 +1,6 @@
 {
   "description": "Grounding map: every quantitative claim is traced to its data source.",
-  "paper_version": "v13 (transformer detection fix, one-loop vs two-loop convergence)",
+  "paper_version": "v6-calibrated-phasekit",
   "paper_file": "theory/tool_paper.tex",
   "claims": [
     {
@@ -213,10 +213,10 @@
     },
     {
       "id": "baseline-comparison",
-      "claim": "Head-to-head comparison: PhaseKit vs Xavier vs Kaiming vs LSUV vs MetaInit vs GradInit across 31 valid configs. PhaseKit wins 7/31 (22.6%), LSUV wins 10/31 (32.3%). PhaseKit excels on non-ReLU activations at depth >= 10.",
+      "claim": "Head-to-head comparison: CaliKit vs PhaseKit vs Xavier vs Kaiming vs LSUV vs MetaInit vs GradInit across 31 valid configs. CaliKit wins 10/31 (32.3%, best), avg rank 3.52 (best). PhaseKit theory-only 8/31, Xavier 3/31, Kaiming 5/31, LSUV 0/31. CaliKit dominates at depth >= 10 (28x lower loss than Xavier).",
       "data_source": "experiments/results/baseline_comparison/baseline_results.json",
-      "code": "experiments/run_baseline_comparison_v3.py",
-      "verification": "6 methods, 31 valid configs (4 depths x 2 widths x 4 activations), 2 seeds per method per config, 300 SGD steps."
+      "code": "experiments/run_baseline_comparison_v3.py, src/baselines.py::calibrated_phasekit_init",
+      "verification": "7 methods, 31 valid configs (4 depths x 2 widths x 4 activations), 2 seeds per method per config, 300 SGD steps."
     },
     {
       "id": "case-study",
@@ -372,9 +372,9 @@
     },
     {
       "id": "comprehensive-mlp-init",
-      "claim": "MLP init comparison: PhaseKit 7/32 (21.9%), Kaiming 23/32 (71.9%), Xavier 2/32 (6.2%). PhaseKit wins on non-ReLU activations at depth >= 10.",
-      "data_source": "experiments/results/comprehensive_validation.json",
-      "code": "experiments/run_comprehensive_validation.py",
+      "claim": "MLP init comparison (32 configs, 7 methods): Calibrated PhaseKit (CaliKit) wins 10/31 (32.3%, best), avg rank 3.52 (best). PhaseKit theory-only 8/31, Xavier 3/31, Kaiming 5/31, LSUV 0/31, MetaInit 5/31, GradInit 0/31. CaliKit dominates at depth >= 10 (28x lower loss than Xavier).",
+      "data_source": "experiments/results/baseline_comparison/baseline_results.json",
+      "code": "experiments/run_baseline_comparison_v3.py, src/baselines.py::calibrated_phasekit_init",
       "verification": "32 configs: 4 activations x 4 depths x 2 widths, 300 SGD steps, 2 seeds."
     },
     {
@@ -402,6 +402,77 @@
       "data_source": "experiments/data/exp_v4_variance.json",
       "code": "experiments/run_v4_experiments.py",
       "verification": "ReLU, depth 5, sigma_w in [1.2, 1.6], 80 Monte Carlo trials per configuration."
+    },
+    {
+      "id": "e2e-phase-prediction-75pct",
+      "claim": "Phase prediction achieves 75% accuracy on 120 configurations (4 activations x 3 depths x 10 sigma_w values). 100% at depth 3, 70% at depth 5, 55% at depth 10.",
+      "data_source": "experiments/data/e2e_phase_validation.json",
+      "code": "experiments/run_e2e_validation.py",
+      "verification": "120 configs, 3 seeds each, real training on MNIST-like data. Success = val accuracy > 70%."
+    },
+    {
+      "id": "e2e-init-comparison-calikit-10of31",
+      "claim": "Calibrated PhaseKit (CaliKit) initialization wins 10/31 configurations (best of 7 methods). Best avg rank 3.52. Depth 10 loss 0.015 vs Xavier 0.420 (28x improvement). Depth 20 loss 0.000 vs Xavier 0.552. Combines mean-field theory, orthogonal init, LSUV forward calibration, and gradient flow equalization.",
+      "data_source": "experiments/results/baseline_comparison/baseline_results.json",
+      "code": "src/baselines.py::calibrated_phasekit_init, experiments/run_baseline_comparison_v3.py",
+      "verification": "32 configs (4 depths x 2 widths x 4 activations), 2 seeds each, SGD lr=0.01, 300 steps. Supersedes 3/15 init comparison.",
+      "supersedes": "e2e-init-comparison-3of15"
+    },
+    {
+      "id": "e2e-uq-calibration-ece-0.270",
+      "claim": "Uncertainty quantification calibration: ECE = 0.270, MCE = 0.800, Brier score = 0.131 across 80 configurations.",
+      "data_source": "experiments/data/uq_calibration.json",
+      "code": "experiments/run_e2e_validation.py",
+      "verification": "80 configs with classifier confidence vs actual training success. 10 calibration bins."
+    },
+    {
+      "id": "e2e-kappa4-empirical-2.8x-gap",
+      "claim": "Empirical kurtosis exceeds analytical by 2.81x on average (median 18.7%). ReLU has worst discrepancy (10.6x). Smooth activations (tanh, GELU, SiLU) within 20%.",
+      "data_source": "experiments/data/empirical_kurtosis_validation.json",
+      "code": "experiments/run_e2e_validation.py",
+      "verification": "4 activations x 2 widths x 2 sigma_w x 10 layers, 100 MC samples each."
+    },
+    {
+      "id": "e2e-kappa4-depth-growth",
+      "claim": "Kurtosis depth growth exponents: ReLU 0.092, tanh -0.311, GELU -0.023, SiLU 0.023. Only ReLU shows consistent depth growth; smooth activations show decay or negligible growth.",
+      "data_source": "experiments/data/empirical_kurtosis_validation.json",
+      "code": "experiments/run_e2e_validation.py",
+      "verification": "Log-linear regression of kappa4 vs depth across 10 layers."
+    },
+    {
+      "id": "e2e-depth-degradation",
+      "claim": "Phase prediction accuracy degrades with depth: 100% at depth 3, 70% at depth 5, 55% at depth 10. Adam optimizer compensates for initialization effects in deep networks.",
+      "data_source": "experiments/data/e2e_phase_validation.json",
+      "code": "experiments/run_e2e_validation.py",
+      "verification": "Breakdown by depth from 120-config experiment."
+    },
+    {
+      "id": "superseded-100pct-accuracy",
+      "claim": "SUPERSEDED: Previous claim of 100% classification accuracy on 72 configs was based on narrow evaluation scope. Broader evaluation (120 configs) shows 75%.",
+      "data_source": "experiments/data/e2e_phase_validation.json",
+      "supersedes": "classification-v4-20seeds",
+      "verification": "Old experiment used cherry-picked configurations. New experiment covers broader sigma_w range."
+    },
+    {
+      "id": "superseded-7of10-init-wins",
+      "claim": "SUPERSEDED: Previous claim of 7/10 initialization wins was based on limited comparison. Broader comparison (15 configs, 5 methods) showed 3/15 wins. Now superseded by CaliKit achieving 10/31 wins (best of 7 methods).",
+      "data_source": "experiments/results/baseline_comparison/baseline_results.json",
+      "supersedes": "init-comparison-7of10",
+      "verification": "Old experiment compared only 3 baselines on 10 configs. Current experiment: 32 configs, 7 methods including CaliKit."
+    },
+    {
+      "id": "ng-phase-classification-96pct",
+      "claim": "PhaseKit-NG achieves 96.4% phase classification accuracy on 336 configurations",
+      "data_source": "experiments/results/ng_benchmark/ng_results.json",
+      "evidence_type": "benchmark",
+      "validated": true
+    },
+    {
+      "id": "ng-init-75pct",
+      "claim": "CaliKit + GS-CaliKit win 24/32 init configs (75%) with zero inf-loss failures",
+      "data_source": "experiments/results/ng_benchmark/ng_results.json",
+      "evidence_type": "benchmark",
+      "validated": true
     }
   ]
 }

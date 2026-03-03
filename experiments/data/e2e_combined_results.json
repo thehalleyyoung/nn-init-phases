@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-03-02T07:11:20.416970",
+  "phase_prediction_accuracy": 0.75,
+  "init_wins": {
+    "phasekit": 3,
+    "kaiming": 0,
+    "xavier": 8,
+    "lecun": 4,
+    "mup": 0
+  },
+  "ece": 0.27000000000000013,
+  "kurtosis_mean_error": 2.805136741435746,
+  "ng_extension": {
+    "phase_accuracy_ng": 0.964,
+    "phase_accuracy_standard": 0.518,
+    "init_wins_combined": "24/32 (75%)",
+    "note": "See experiments/results/ng_benchmark/ng_results.json"
+  }
+}

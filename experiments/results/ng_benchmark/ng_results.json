@@ -1,0 +1,561 @@
+{
+  "phase_classification": {
+    "overall": {
+      "standard": 0.5178571428571429,
+      "ng": 0.9642857142857143
+    },
+    "by_depth": {
+      "3": {
+        "standard": 0.17857142857142858,
+        "ng": 0.9642857142857143,
+        "n": 84
+      },
+      "5": {
+        "standard": 0.32142857142857145,
+        "ng": 0.9642857142857143,
+        "n": 84
+      },
+      "10": {
+        "standard": 0.75,
+        "ng": 0.9642857142857143,
+        "n": 84
+      },
+      "20": {
+        "standard": 0.8214285714285714,
+        "ng": 0.9642857142857143,
+        "n": 84
+      }
+    },
+    "by_activation": {
+      "gelu": {
+        "standard": 0.5357142857142857,
+        "ng": 1.0,
+        "n": 84
+      },
+      "relu": {
+        "standard": 0.4642857142857143,
+        "ng": 1.0,
+        "n": 84
+      },
+      "silu": {
+        "standard": 0.5357142857142857,
+        "ng": 0.9285714285714286,
+        "n": 84
+      },
+      "tanh": {
+        "standard": 0.5357142857142857,
+        "ng": 0.9285714285714286,
+        "n": 84
+      }
+    },
+    "n_configs": 336,
+    "misclassifications": [
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "relu",
+        "sigma_w": 0.5,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "relu",
+        "sigma_w": 0.8,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "relu",
+        "sigma_w": 1.0,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "relu",
+        "sigma_w": 1.2,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "relu",
+        "sigma_w": 2.0,
+        "ground_truth": "chaotic",
+        "standard": "critical",
+        "ng": "chaotic",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "relu",
+        "sigma_w": 2.5,
+        "ground_truth": "chaotic",
+        "standard": "critical",
+        "ng": "chaotic",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "tanh",
+        "sigma_w": 0.5,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "tanh",
+        "sigma_w": 0.8,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "tanh",
+        "sigma_w": 1.0,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "tanh",
+        "sigma_w": 1.2,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "tanh",
+        "sigma_w": 1.5,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "critical",
+        "standard_correct": false,
+        "ng_correct": false
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "gelu",
+        "sigma_w": 0.5,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "gelu",
+        "sigma_w": 0.8,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "gelu",
+        "sigma_w": 1.0,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "gelu",
+        "sigma_w": 1.2,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "gelu",
+        "sigma_w": 2.0,
+        "ground_truth": "chaotic",
+        "standard": "critical",
+        "ng": "chaotic",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "gelu",
+        "sigma_w": 2.5,
+        "ground_truth": "chaotic",
+        "standard": "critical",
+        "ng": "chaotic",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "silu",
+        "sigma_w": 0.5,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "silu",
+        "sigma_w": 0.8,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "silu",
+        "sigma_w": 1.0,
+        "ground_truth": "ordered",
+        "standard": "critical",
+        "ng": "ordered",
+        "standard_correct": false,
+        "ng_correct": true
+      }
+    ]
+  },
+  "initialization": {
+    "method_wins": {
+      "calibrated_phasekit": 13,
+      "gs_calikit": 11,
+      "phasekit": 3,
+      "xavier": 2,
+      "lsuv": 3
+    },
+    "total_configs": 32,
+    "inf_failures": {},
+    "details": [
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "relu",
+        "losses": {
+          "xavier": 0.12337170943064502,
+          "kaiming": 0.009984447667400795,
+          "lsuv": 0.02030156343340546,
+          "phasekit": 0.010917309817513089,
+          "calibrated_phasekit": 0.007523926567191412,
+          "gs_calikit": 0.00768425106212336
+        },
+        "winner": "calibrated_phasekit"
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "tanh",
+        "losses": {
+          "xavier": 0.1389450243857257,
+          "kaiming": 0.25028116801219374,
+          "lsuv": 0.044236391091420135,
+          "phasekit": 0.05366478732154964,
+          "calibrated_phasekit": 0.014247501794945867,
+          "gs_calikit": 0.014247501794945867
+        },
+        "winner": "calibrated_phasekit"
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "gelu",
+        "losses": {
+          "xavier": 0.2932491744407678,
+          "kaiming": 0.5038817636625584,
+          "lsuv": 0.016591342262358075,
+          "phasekit": 0.010025542271452114,
+          "calibrated_phasekit": 0.004833339470875742,
+          "gs_calikit": 0.004833339470875737
+        },
+        "winner": "gs_calikit"
+      },
+      {
+        "depth": 3,
+        "width": 64,
+        "activation": "silu",
+        "losses": {
+          "xavier": 0.7485942798159494,
+          "kaiming": 0.968178816920187,
+          "lsuv": 0.049289259740715866,
+          "phasekit": 0.029608220179855784,
+          "calibrated_phasekit": 0.019473952075529592,
+          "gs_calikit": 0.019473952075529582
+        },
+        "winner": "gs_calikit"
+      },
+      {
+        "depth": 3,
+        "width": 128,
+        "activation": "relu",
+        "losses": {
+          "xavier": 0.0031554578667801828,
+          "kaiming": 1.1904134221459455,
+          "lsuv": 0.0009780673515509296,
+          "phasekit": 1.1662368747287952,
+          "calibrated_phasekit": 0.00013125606630432938,
+          "gs_calikit": 0.00013132370511379762
+        },
+        "winner": "calibrated_phasekit"
+      },
+      {
+        "depth": 3,
+        "width": 128,
+        "activation": "tanh",
+        "losses": {
+          "xavier": 0.007447472416706773,
+          "kaiming": 0.02171576727417034,
+          "lsuv": 0.0013700632230365312,
+          "phasekit": 0.0003847584049690572,
+          "calibrated_phasekit": 0.00010420298261380116,
+          "gs_calikit": 0.00010420298261379937
+        },
+        "winner": "gs_calikit"
+      },
+      {
+        "depth": 3,
+        "width": 128,
+        "activation": "gelu",
+        "losses": {
+          "xavier": 0.010525409699027575,
+          "kaiming": 0.027439166154529904,
+          "lsuv": 0.00015691577080661554,
+          "phasekit": 0.0009695908308928996,
+          "calibrated_phasekit": 6.770109245901495e-06,
+          "gs_calikit": 6.770109245901692e-06
+        },
+        "winner": "calibrated_phasekit"
+      },
+      {
+        "depth": 3,
+        "width": 128,
+        "activation": "silu",
+        "losses": {
+          "xavier": 0.07317833628265447,
+          "kaiming": 0.1438245753898043,
+          "lsuv": 0.0042769253794139065,
+          "phasekit": 0.00011078954573463818,
+          "calibrated_phasekit": 0.0007803271745185315,
+          "gs_calikit": 0.0007803271745185322
+        },
+        "winner": "phasekit"
+      },
+      {
+        "depth": 5,
+        "width": 64,
+        "activation": "relu",
+        "losses": {
+          "xavier": 0.288295281123744,
+          "kaiming": 0.21959911006652233,
+          "lsuv": 0.004151116467348883,
+          "phasekit": 0.19693036385305973,
+          "calibrated_phasekit": 0.0031021297370590157,
+          "gs_calikit": 0.0029310555136424455
+        },
+        "winner": "gs_calikit"
+      },
+      {
+        "depth": 5,
+        "width": 64,
+        "activation": "tanh",
+        "losses": {
+          "xavier": 0.0902278339672157,
+          "kaiming": 0.21915433994763078,
+          "lsuv": 0.003937336980654828,
+          "phasekit": 0.007126517055011973,
+          "calibrated_phasekit": 0.001051386126458663,
+          "gs_calikit": 0.0009907837864006233
+        },
+        "winner": "gs_calikit"
+      }
+    ]
+  },
+  "kurtosis": {
+    "mean_ratio": 0.39963973361314103,
+    "configs": [
+      {
+        "sigma_w": 1.0,
+        "activation": "relu",
+        "width": 128,
+        "depth": 5,
+        "theory_kurtosis": 3.005870841487191,
+        "empirical_kurtosis": 2.557173563707192,
+        "ratio": 1.1754661021637938
+      },
+      {
+        "sigma_w": 1.0,
+        "activation": "relu",
+        "width": 128,
+        "depth": 10,
+        "theory_kurtosis": 3.005870841487277,
+        "empirical_kurtosis": 3.1066283619758055,
+        "ratio": 0.967566921836622
+      },
+      {
+        "sigma_w": 1.0,
+        "activation": "tanh",
+        "width": 128,
+        "depth": 5,
+        "theory_kurtosis": -0.603830365461293,
+        "empirical_kurtosis": 2.2165175506386956,
+        "ratio": 0.27242300214915854
+      },
+      {
+        "sigma_w": 1.0,
+        "activation": "tanh",
+        "width": 128,
+        "depth": 10,
+        "theory_kurtosis": -0.35097194286560934,
+        "empirical_kurtosis": 2.409941013927052,
+        "ratio": 0.14563507606092518
+      },
+      {
+        "sigma_w": 1.0,
+        "activation": "gelu",
+        "width": 128,
+        "depth": 5,
+        "theory_kurtosis": 0.5607475342810808,
+        "empirical_kurtosis": 2.2463500763092537,
+        "ratio": 0.24962606683388697
+      },
+      {
+        "sigma_w": 1.0,
+        "activation": "gelu",
+        "width": 128,
+        "depth": 10,
+        "theory_kurtosis": 0.000608483285749388,
+        "empirical_kurtosis": 2.499594619591522,
+        "ratio": 0.000243432787452881
+      },
+      {
+        "sigma_w": 1.0,
+        "activation": "silu",
+        "width": 128,
+        "depth": 5,
+        "theory_kurtosis": 0.13038827731218242,
+        "empirical_kurtosis": 2.2397451820610828,
+        "ratio": 0.0582156748707436
+      },
+      {
+        "sigma_w": 1.0,
+        "activation": "silu",
+        "width": 128,
+        "depth": 10,
+        "theory_kurtosis": 0.00013062763219123761,
+        "empirical_kurtosis": 2.493735224816708,
+        "ratio": 5.238231825547513e-05
+      },
+      {
+        "sigma_w": 1.414,
+        "activation": "relu",
+        "width": 128,
+        "depth": 5,
+        "theory_kurtosis": 3.0058708414871926,
+        "empirical_kurtosis": 2.557173563707194,
+        "ratio": 1.1754661021637935
+      },
+      {
+        "sigma_w": 1.414,
+        "activation": "relu",
+        "width": 128,
+        "depth": 10,
+        "theory_kurtosis": 3.005870841487277,
+        "empirical_kurtosis": 3.1066283619758046,
+        "ratio": 0.9675669218366222
+      },
+      {
+        "sigma_w": 1.414,
+        "activation": "relu",
+        "width": 64,
+        "depth": 10,
+        "theory_kurtosis": 3.0117647058823502,
+        "empirical_kurtosis": 5.285674578028944,
+        "ratio": 0.5697976032049732
+      },
+      {
+        "sigma_w": 1.0,
+        "activation": "gelu",
+        "width": 64,
+        "depth": 10,
+        "theory_kurtosis": 0.0006096760763864552,
+        "empirical_kurtosis": 3.2207343262706196,
+        "ratio": 0.00018929722685087676
+      },
+      {
+        "sigma_w": 1.2,
+        "activation": "gelu",
+        "width": 128,
+        "depth": 10,
+        "theory_kurtosis": 0.02764487431588424,
+        "empirical_kurtosis": 2.510625602100007,
+        "ratio": 0.011011149688253298
+      },
+      {
+        "sigma_w": 1.2,
+        "activation": "silu",
+        "width": 128,
+        "depth": 10,
+        "theory_kurtosis": 0.004239124196748039,
+        "empirical_kurtosis": 2.498691800248766,
+        "ratio": 0.0016965374426433858
+      }
+    ]
+  },
+  "timestamp": "2026-03-02T14:30:45",
+  "elapsed_seconds": 579.62327003479
+}

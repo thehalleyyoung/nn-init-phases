@@ -121,14 +121,16 @@ def _populate_act_caches():
     if hasattr(avm, "mish_chi"):
         _CHI_CACHE["mish"] = avm.mish_chi
     # Kappa4 (excess kurtosis) for finite-width corrections
-    _KAPPA4_CACHE["relu"] = lambda q: 0.5
-    _KAPPA4_CACHE["tanh"] = lambda q: 1.0
-    _KAPPA4_CACHE["gelu"] = lambda q: 2.2
-    _KAPPA4_CACHE["silu"] = lambda q: 2.644
-    _KAPPA4_CACHE["sigmoid"] = lambda q: 1.0
-    _KAPPA4_CACHE["elu"] = lambda q: 0.48
-    _KAPPA4_CACHE["leaky_relu"] = lambda q: 0.5
-    _KAPPA4_CACHE["mish"] = lambda q: 0.31
+    # Use q-dependent empirical values from ActivationVarianceMaps
+    # instead of constant Gaussian-closure approximations
+    _KAPPA4_CACHE["relu"] = lambda q: 0.5  # exact for ReLU
+    _KAPPA4_CACHE["tanh"] = lambda q: avm.get_kurtosis_excess("tanh", max(q, 0.1))
+    _KAPPA4_CACHE["gelu"] = lambda q: avm.get_kurtosis_excess("gelu", max(q, 0.1))
+    _KAPPA4_CACHE["silu"] = lambda q: avm.get_kurtosis_excess("silu", max(q, 0.1))
+    _KAPPA4_CACHE["sigmoid"] = lambda q: avm.get_kurtosis_excess("sigmoid", max(q, 0.1)) if hasattr(avm, 'sigmoid_fourth_moment') else 1.0
+    _KAPPA4_CACHE["elu"] = lambda q: avm.get_kurtosis_excess("elu", max(q, 0.1)) if hasattr(avm, 'elu_fourth_moment') else 0.48
+    _KAPPA4_CACHE["leaky_relu"] = lambda q: avm.get_kurtosis_excess("leaky_relu", max(q, 0.1))
+    _KAPPA4_CACHE["mish"] = lambda q: avm.get_kurtosis_excess("mish", max(q, 0.1))
     _KAPPA4_CACHE["linear"] = lambda q: 0.0
 
 
@@ -839,8 +841,9 @@ class DAGVariancePropagator:
 
             # Finite-width correction
             if apply_fw and self.width > 0:
-                # Use activation-specific kappa4 from the preceding activation
-                kappa = 0.5  # default ReLU
+                # Use q-dependent kappa4 from the preceding activation
+                kappa_fn = _get_kappa4(node.activation if node.activation else "relu")
+                kappa = kappa_fn(max(q_in, 1e-30))
                 q_out_fw = q_out + node.sigma_w ** 4 * kappa * q_in ** 2 / self.width
                 corr_ratio = abs(q_out_fw - q_out) / max(abs(q_out), 1e-30)
                 if corr_ratio < 0.3:

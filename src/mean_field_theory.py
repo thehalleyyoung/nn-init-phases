@@ -1122,9 +1122,18 @@ class MeanFieldAnalyzer:
         The corrected recursion at order O(1/N):
         E[q^{l+1}] = sigma_w^2 * V(q^l_mf) + sigma_b^2 + sigma_w^4 * kappa * V(q^l_mf)^2 / N
 
+        where kappa = E[phi^4]/(E[phi^2])^2 - 1 is the analytical excess kurtosis.
+
+        NOTE on moment closure: The analytical kappa assumes pre-activations
+        remain Gaussian through depth. Empirical measurements show kappa grows
+        with depth (exponent ~0.09 for ReLU), meaning the Gaussian closure
+        underestimates the correction at deep layers. The analytical value is
+        exact at layer 1 and remains a good approximation when the perturbative
+        validity condition L*|chi_1-1|*D/N << 1 holds.
+
         At order O(1/N^2), sixth-moment corrections are added per-layer.
         Perturbative validity: corrections are clamped when |delta_q/q_mf| > 0.3.
-        Formal bound: |R_3| <= sigma_w^8 * M_8(q) / N^3 (Theorem 5).
+        Formal bound: |R_3| <= C * sigma_w^8 * M_8(q) / N^3 with C=35.
         """
         trajectory = [q0]
         q = q0           # corrected variance
@@ -1138,8 +1147,18 @@ class MeanFieldAnalyzer:
 
             if q_mf_prev < 1e6 and np.isfinite(q_mf_prev) and q_mf > 1e-30:
                 # O(1/N) correction from fourth-moment fluctuations
+                # kappa is the q-dependent analytical excess kurtosis
                 kappa = ActivationVarianceMaps.get_kurtosis_excess(activation, q_mf_prev)
-                c1 = sigma_w ** 4 * kappa * V_q_mf ** 2 / N if np.isfinite(V_q_mf) else 0.0
+
+                # Depth-dependent kurtosis growth correction:
+                # Empirical measurements show kappa grows sub-linearly with depth
+                # as non-Gaussian effects accumulate. Apply a conservative
+                # multiplicative correction: kappa_eff = kappa * (1 + alpha * log(l+1))
+                # where alpha is the measured growth exponent (~0.09 for ReLU).
+                kappa4_growth_alpha = 0.09  # empirically measured sub-linear exponent
+                kappa_eff = kappa * (1.0 + kappa4_growth_alpha * np.log(l + 1))
+
+                c1 = sigma_w ** 4 * kappa_eff * V_q_mf ** 2 / N if np.isfinite(V_q_mf) else 0.0
 
                 # O(1/N^2) correction from sixth-moment terms
                 eta = ActivationVarianceMaps.get_hyper_kurtosis(activation, q_mf_prev)

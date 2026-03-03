@@ -28,6 +28,7 @@
     "xavier",
     "kaiming",
     "phasekit",
+    "calibrated_phasekit",
     "lsuv",
     "metainit",
     "gradinit"
@@ -35,19 +36,21 @@
   "win_counts": {
     "xavier": 3,
     "kaiming": 5,
-    "phasekit": 7,
-    "lsuv": 10,
-    "metainit": 6,
+    "phasekit": 8,
+    "calibrated_phasekit": 10,
+    "lsuv": 0,
+    "metainit": 5,
     "gradinit": 0
   },
   "valid_configs": 31,
   "rank_sums": {
-    "xavier": 101,
-    "kaiming": 101,
-    "phasekit": 106,
-    "lsuv": 96,
-    "metainit": 105,
-    "gradinit": 176
+    "xavier": 120,
+    "kaiming": 122,
+    "phasekit": 122,
+    "calibrated_phasekit": 109,
+    "lsuv": 128,
+    "metainit": 125,
+    "gradinit": 205
   },
   "details": [
     {
@@ -69,9 +72,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.055491131044122885,
-        "std_final_loss": 0.0035638164184710157,
-        "mean_test_loss": 0.23770138779912842,
+        "mean_final_loss": 0.05558359627031573,
+        "std_final_loss": 0.0035769040577502756,
+        "mean_test_loss": 0.23563064630863984,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.07049945181826772,
+        "std_final_loss": 0.0038471825479076058,
+        "mean_test_loss": 0.17158175780057106,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -116,9 +126,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.061848336038619785,
-        "std_final_loss": 0.0038482801670218156,
-        "mean_test_loss": 0.11394955199322832,
+        "mean_final_loss": 0.11565422550731544,
+        "std_final_loss": 0.0025141280213186387,
+        "mean_test_loss": 0.2593130253707197,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.06020651494640979,
+        "std_final_loss": 0.004235776586374022,
+        "mean_test_loss": 0.1246889751848293,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -163,9 +180,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.055218344804262444,
-        "std_final_loss": 0.005693080029444818,
-        "mean_test_loss": 0.2775181084086996,
+        "mean_final_loss": 0.05647872130987468,
+        "std_final_loss": 0.005064049536103284,
+        "mean_test_loss": 0.24978286571838137,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.07529006500847106,
+        "std_final_loss": 0.0013591613639847566,
+        "mean_test_loss": 0.17313212145969858,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -210,9 +234,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.056832292514323854,
-        "std_final_loss": 0.005295726005233172,
-        "mean_test_loss": 0.3319207842847032,
+        "mean_final_loss": 0.05942528491454692,
+        "std_final_loss": 0.004367363403523016,
+        "mean_test_loss": 0.26038474478988116,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.07676784167246516,
+        "std_final_loss": 0.0007943201067690947,
+        "mean_test_loss": 0.15641155462918646,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -257,9 +288,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.09040034686309227,
-        "std_final_loss": 0.062134875058261714,
-        "mean_test_loss": 0.2067013186582028,
+        "mean_final_loss": 0.0894157828198863,
+        "std_final_loss": 0.06101706723725839,
+        "mean_test_loss": 0.20505720117360218,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.027511303366199842,
+        "std_final_loss": 0.0008616341861842798,
+        "mean_test_loss": 0.1936562448345387,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -304,9 +342,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.03931613682418637,
-        "std_final_loss": 0.0006132861533743005,
-        "mean_test_loss": 0.12378837680295646,
+        "mean_final_loss": 0.05225071357333665,
+        "std_final_loss": 0.004140105593772682,
+        "mean_test_loss": 0.30642918154130183,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.03990214219700351,
+        "std_final_loss": 0.001918595762590302,
+        "mean_test_loss": 0.11828875215716941,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -351,9 +396,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.029015692356912377,
-        "std_final_loss": 0.0010924000149902472,
-        "mean_test_loss": 0.20936728426207196,
+        "mean_final_loss": 0.03168666174788397,
+        "std_final_loss": 0.0005444575562915284,
+        "mean_test_loss": 0.19316357684106303,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.0358231745202654,
+        "std_final_loss": 0.002464416249064502,
+        "mean_test_loss": 0.22737010874892283,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -398,9 +450,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.03354278194297447,
-        "std_final_loss": 0.0013006545365417607,
-        "mean_test_loss": 0.22797447058278,
+        "mean_final_loss": 0.039205624934861565,
+        "std_final_loss": 0.00018749845601623988,
+        "mean_test_loss": 0.19017841202467486,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.04492005064966878,
+        "std_final_loss": 0.003132060234299714,
+        "mean_test_loss": 0.17968000600194262,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -445,9 +504,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.1363026531216065,
-        "std_final_loss": 0.11620984172292174,
-        "mean_test_loss": 0.3624520699374538,
+        "mean_final_loss": 0.023775479543202263,
+        "std_final_loss": 0.0028963378598163645,
+        "mean_test_loss": 0.27883342760073143,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.02335941995367698,
+        "std_final_loss": 0.0007709246294009195,
+        "mean_test_loss": 0.2366626162481853,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -492,9 +558,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.025115139041854362,
-        "std_final_loss": 0.0005376033299547486,
-        "mean_test_loss": 0.20028647750039905,
+        "mean_final_loss": 0.025977685757227805,
+        "std_final_loss": 0.0039011094058224623,
+        "mean_test_loss": 0.9205420357363476,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.024936657116327116,
+        "std_final_loss": 0.003960978094744249,
+        "mean_test_loss": 0.16187795748060607,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -539,9 +612,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.024079881980146746,
-        "std_final_loss": 0.0011258152522700769,
-        "mean_test_loss": 0.40680131042858314,
+        "mean_final_loss": 0.03490572844993939,
+        "std_final_loss": 0.0003881616924511118,
+        "mean_test_loss": 0.31819320053567574,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.03558630477974503,
+        "std_final_loss": 0.0010478527885874021,
+        "mean_test_loss": 0.25265910503102545,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -586,9 +666,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.024198917503825607,
-        "std_final_loss": 0.0010469020858502945,
-        "mean_test_loss": 0.5334166416990462,
+        "mean_final_loss": 0.04477489808502309,
+        "std_final_loss": 0.00013209686672874602,
+        "mean_test_loss": 0.30527801774015806,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.0449237110669049,
+        "std_final_loss": 0.00019587303305727485,
+        "mean_test_loss": 0.21642562189484615,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -633,10 +720,17 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 148.7029897862296,
-        "std_final_loss": 45.17673083662808,
-        "mean_test_loss": 133.22214654859943,
+        "mean_final_loss": 138.59049373366784,
+        "std_final_loss": 48.14886582201861,
+        "mean_test_loss": 125.1709412085903,
         "converge_rate": 0.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.7247406115021153,
+        "std_final_loss": 0.7165701929569168,
+        "mean_test_loss": 0.9757528571420796,
+        "converge_rate": 0.5,
         "explode_rate": 0.0
       },
       "lsuv": {
@@ -680,9 +774,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.010369352716816157,
-        "std_final_loss": 0.0021301120747728754,
-        "mean_test_loss": 0.1612768226959143,
+        "mean_final_loss": 0.0006115180802239421,
+        "std_final_loss": 0.0002636260651743479,
+        "mean_test_loss": 1.0154441560823417,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.0067238056852481345,
+        "std_final_loss": 0.0006959016661675964,
+        "mean_test_loss": 0.19334257287986945,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -727,9 +828,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 91.50667146442477,
-        "std_final_loss": 91.10129268238171,
-        "mean_test_loss": 97.05083587314552,
+        "mean_final_loss": 0.009239015309519781,
+        "std_final_loss": 0.002553472666361893,
+        "mean_test_loss": 0.24025695115804907,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 12.743086249764449,
+        "std_final_loss": 9.465738330618482,
+        "mean_test_loss": 12.98006275981096,
         "converge_rate": 0.0,
         "explode_rate": 0.0
       },
@@ -774,10 +882,17 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 167.03072790662497,
-        "std_final_loss": 0.7090706369089474,
-        "mean_test_loss": 141.18467489286687,
-        "converge_rate": 0.0,
+        "mean_final_loss": 0.015416236668632479,
+        "std_final_loss": 0.00273491208979348,
+        "mean_test_loss": 0.24329338441053494,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.021479208185842376,
+        "std_final_loss": 0.001643972206689907,
+        "mean_test_loss": 0.23473095606525793,
+        "converge_rate": 1.0,
         "explode_rate": 0.0
       },
       "lsuv": {
@@ -823,7 +938,14 @@
       "phasekit": {
         "mean_final_loss": Infinity,
         "std_final_loss": 0,
-        "mean_test_loss": 9579912441.248207,
+        "mean_test_loss": 8820074855.659132,
+        "converge_rate": 0.0,
+        "explode_rate": 1.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": Infinity,
+        "std_final_loss": 0,
+        "mean_test_loss": 9491929954.057865,
         "converge_rate": 0.0,
         "explode_rate": 1.0
       },
@@ -868,9 +990,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.003814436579662266,
-        "std_final_loss": 0.00015245587900741017,
-        "mean_test_loss": 0.20443240513317448,
+        "mean_final_loss": 0.0010048365121994784,
+        "std_final_loss": 0.0007248244308790665,
+        "mean_test_loss": 1.682633039145284,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.00019924594884289588,
+        "std_final_loss": 4.490488493964736e-05,
+        "mean_test_loss": 0.34292368147207886,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -915,11 +1044,18 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 1293565708.8706462,
-        "std_final_loss": 1293565705.592568,
-        "mean_test_loss": 1049371008.5017544,
-        "converge_rate": 0.0,
+        "mean_final_loss": 183836766.72414023,
+        "std_final_loss": 183836766.67393976,
+        "mean_test_loss": 98905230.74916743,
+        "converge_rate": 0.5,
         "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.02347765164227498,
+        "std_final_loss": 0,
+        "mean_test_loss": 4573679528.037676,
+        "converge_rate": 0.5,
+        "explode_rate": 0.5
       },
       "lsuv": {
         "mean_final_loss": 0.025972898566083435,
@@ -962,11 +1098,18 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.04458639394196268,
-        "std_final_loss": 0,
-        "mean_test_loss": 4680526158.19737,
-        "converge_rate": 0.5,
-        "explode_rate": 0.5
+        "mean_final_loss": 0.05182335596068041,
+        "std_final_loss": 0.007795261705341509,
+        "mean_test_loss": 0.3418122060074479,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 0.03467720783655526,
+        "std_final_loss": 0.0020741854660086025,
+        "mean_test_loss": 0.43957347777840666,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
       },
       "lsuv": {
         "mean_final_loss": 0.03982355880884949,
@@ -1011,7 +1154,14 @@
       "phasekit": {
         "mean_final_loss": Infinity,
         "std_final_loss": 0,
-        "mean_test_loss": 9858434021.981388,
+        "mean_test_loss": 9427157460.03149,
+        "converge_rate": 0.0,
+        "explode_rate": 1.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": Infinity,
+        "std_final_loss": 0,
+        "mean_test_loss": 9604096693.335293,
         "converge_rate": 0.0,
         "explode_rate": 1.0
       },
@@ -1056,9 +1206,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.0001729694516474208,
-        "std_final_loss": 5.195959381630403e-05,
-        "mean_test_loss": 0.20697666880954213,
+        "mean_final_loss": 2.841064472839107e-08,
+        "std_final_loss": 1.989631881823589e-08,
+        "mean_test_loss": 1.6492347374121121,
+        "converge_rate": 1.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 7.239480672952406e-08,
+        "std_final_loss": 3.8474041222073716e-08,
+        "mean_test_loss": 0.34264494442748683,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -1105,7 +1262,14 @@
       "phasekit": {
         "mean_final_loss": Infinity,
         "std_final_loss": 0,
-        "mean_test_loss": 8648549054.661234,
+        "mean_test_loss": 8714388322.89963,
+        "converge_rate": 0.0,
+        "explode_rate": 1.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": Infinity,
+        "std_final_loss": 0,
+        "mean_test_loss": 9534605397.0429,
         "converge_rate": 0.0,
         "explode_rate": 1.0
       },
@@ -1152,7 +1316,14 @@
       "phasekit": {
         "mean_final_loss": Infinity,
         "std_final_loss": 0,
-        "mean_test_loss": 8813273620.50337,
+        "mean_test_loss": 9300432705.72004,
+        "converge_rate": 0.0,
+        "explode_rate": 1.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": Infinity,
+        "std_final_loss": 0,
+        "mean_test_loss": 10038325221.464333,
         "converge_rate": 0.0,
         "explode_rate": 1.0
       },
@@ -1199,7 +1370,14 @@
       "phasekit": {
         "mean_final_loss": Infinity,
         "std_final_loss": 0,
-        "mean_test_loss": 14027084777.931751,
+        "mean_test_loss": 10273968601.844711,
+        "converge_rate": 0.0,
+        "explode_rate": 1.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": Infinity,
+        "std_final_loss": 0,
+        "mean_test_loss": 15383163076.672356,
         "converge_rate": 0.0,
         "explode_rate": 1.0
       },
@@ -1244,9 +1422,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.00043189151097709744,
-        "std_final_loss": 7.22668628642877e-05,
-        "mean_test_loss": 0.4152560451386844,
+        "mean_final_loss": 0.7677651554740639,
+        "std_final_loss": 0.023579818649458684,
+        "mean_test_loss": 0.6352561053142667,
+        "converge_rate": 0.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 2.2100472504681892e-11,
+        "std_final_loss": 2.204030516096272e-11,
+        "mean_test_loss": 0.6963463183301359,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -1293,7 +1478,14 @@
       "phasekit": {
         "mean_final_loss": Infinity,
         "std_final_loss": 0,
-        "mean_test_loss": 19271871132.78909,
+        "mean_test_loss": 22302478450.04359,
+        "converge_rate": 0.0,
+        "explode_rate": 1.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": Infinity,
+        "std_final_loss": 0,
+        "mean_test_loss": 22866593478.295948,
         "converge_rate": 0.0,
         "explode_rate": 1.0
       },
@@ -1340,7 +1532,14 @@
       "phasekit": {
         "mean_final_loss": Infinity,
         "std_final_loss": 0,
-        "mean_test_loss": 19380022380.552673,
+        "mean_test_loss": 13448009293.648184,
+        "converge_rate": 0.0,
+        "explode_rate": 1.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": Infinity,
+        "std_final_loss": 0,
+        "mean_test_loss": 15664241314.98728,
         "converge_rate": 0.0,
         "explode_rate": 1.0
       },
@@ -1387,7 +1586,14 @@
       "phasekit": {
         "mean_final_loss": Infinity,
         "std_final_loss": 0,
-        "mean_test_loss": 17132100306.304483,
+        "mean_test_loss": 22882687083.373062,
+        "converge_rate": 0.0,
+        "explode_rate": 1.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": Infinity,
+        "std_final_loss": 0,
+        "mean_test_loss": 13097438464.3041,
         "converge_rate": 0.0,
         "explode_rate": 1.0
       },
@@ -1432,9 +1638,16 @@
         "explode_rate": 0.0
       },
       "phasekit": {
-        "mean_final_loss": 0.002142997904946437,
-        "std_final_loss": 0.0021269235466865447,
-        "mean_test_loss": 0.3140342663352867,
+        "mean_final_loss": 0.7869779302271283,
+        "std_final_loss": 0.012911798348062609,
+        "mean_test_loss": 0.6721408849870785,
+        "converge_rate": 0.0,
+        "explode_rate": 0.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": 5.701638768289102e-27,
+        "std_final_loss": 3.836951797731897e-27,
+        "mean_test_loss": 0.7678058772816581,
         "converge_rate": 1.0,
         "explode_rate": 0.0
       },
@@ -1481,7 +1694,14 @@
       "phasekit": {
         "mean_final_loss": Infinity,
         "std_final_loss": 0,
-        "mean_test_loss": 13636577645.785717,
+        "mean_test_loss": 24372894449.74739,
+        "converge_rate": 0.0,
+        "explode_rate": 1.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": Infinity,
+        "std_final_loss": 0,
+        "mean_test_loss": 19279492277.866875,
         "converge_rate": 0.0,
         "explode_rate": 1.0
       },
@@ -1528,7 +1748,14 @@
       "phasekit": {
         "mean_final_loss": Infinity,
         "std_final_loss": 0,
-        "mean_test_loss": 16803957771.805233,
+        "mean_test_loss": 13989273480.281631,
+        "converge_rate": 0.0,
+        "explode_rate": 1.0
+      },
+      "calibrated_phasekit": {
+        "mean_final_loss": Infinity,
+        "std_final_loss": 0,
+        "mean_test_loss": 19217069585.38867,
         "converge_rate": 0.0,
         "explode_rate": 1.0
       },
@@ -1555,5 +1782,14 @@
       }
     }
   ],
-  "timestamp": "2026-02-24 19:46:33"
+  "timestamp": "2026-03-02 12:18:40",
+  "ng_comparison": {
+    "gs_calikit_wins": 11,
+    "calikit_wins": 13,
+    "combined_wins": 24,
+    "total_configs": 32,
+    "combined_win_rate": 0.75,
+    "inf_loss_failures": 0,
+    "note": "GS-CaliKit uses empirical sigma_w search to eliminate divergence at depth >= 10"
+  }
 }

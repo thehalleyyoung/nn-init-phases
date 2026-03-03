@@ -172,6 +172,161 @@ def phasekit_init(dims: List[int], activation: str = "relu",
                       f"PhaseKit var-ratio gain={gain:.4f} for {activation}")
 
 
+def calibrated_phasekit_init(dims: List[int], activation: str = "relu",
+                            X_calib: Optional[np.ndarray] = None,
+                            seed: int = 42, n_forward_iter: int = 20,
+                            n_grad_iter: int = 5, target_var: float = 1.0,
+                            grad_damping: float = 0.15) -> InitResult:
+    """Calibrated PhaseKit: theory-guided warm start + forward/backward calibration.
+
+    Combines PhaseKit's mean-field variance-ratio theory with:
+    1. Orthogonal base init (robust spectral properties)
+    2. Theory-guided scale from mean-field analysis
+    3. LSUV-style forward calibration (per-layer unit variance on data)
+    4. Conservative gradient flow equalization (per-layer gradient norm balancing)
+
+    Advantages over individual methods:
+    - vs PhaseKit: adds empirical calibration, per-layer sigma, gradient flow
+    - vs LSUV: theory-guided warm start (fewer iterations), gradient equalization
+    - vs MetaInit/GradInit: adds forward calibration, better warm start
+    """
+    import sys, os
+    sys.path.insert(0, os.path.dirname(__file__))
+    from mean_field_theory import MeanFieldAnalyzer
+    from scipy.optimize import minimize_scalar
+
+    rng = np.random.RandomState(seed)
+    if X_calib is None:
+        X_calib = rng.randn(256, dims[0])
+
+    n_layers = len(dims) - 1
+    n_hidden = n_layers - 1
+
+    # === Phase 1: Theory-guided gain from mean-field analysis ===
+    mf = MeanFieldAnalyzer()
+    depth = max(n_hidden, 1)
+
+    def variance_ratio_error(sw):
+        try:
+            vr = mf._predict_variance_ratio(
+                sw, 0.0, activation, dims[1] if len(dims) > 2 else 128,
+                input_variance=1.0, n_layers=min(depth, 10))
+            if vr <= 0 or not np.isfinite(vr) or vr > 1e6:
+                return 100.0
+            return abs(np.log(vr))
+        except Exception:
+            return 100.0
+
+    result = minimize_scalar(variance_ratio_error, bounds=(0.1, 5.0),
+                              method='bounded', options={'xatol': 1e-6})
+    gain = result.x
+
+    vr_check = mf._predict_variance_ratio(
+        gain, 0.0, activation, dims[1] if len(dims) > 2 else 128,
+        input_variance=1.0, n_layers=min(depth, 10))
+    if not np.isfinite(vr_check) or vr_check > 10 or vr_check < 0.01:
+        gain_map = {"relu": np.sqrt(2.0), "tanh": 1.0, "gelu": 1.0,
+                    "silu": 1.0, "leaky_relu": np.sqrt(2.0 / 1.0001)}
+        gain = gain_map.get(activation, np.sqrt(2.0))
+
+    # === Phase 2: Orthogonal init × theory gain (robust base) ===
+    weights, biases = [], []
+    for i in range(n_layers):
+        m, n = dims[i], dims[i + 1]
+        A = rng.randn(max(m, n), max(m, n))
+        Q, _ = np.linalg.qr(A)
+        W = Q[:m, :n].copy()
+        is_output = (i == n_layers - 1)
+        if is_output:
+            std_out = np.sqrt(2.0 / (dims[i] + dims[i + 1]))
+            W *= std_out * np.sqrt(max(m, n))
+        else:
+            W *= gain
+        weights.append(W)
+        biases.append(np.zeros(n))
+
+    # === Phase 3: Forward LSUV calibration (per-layer unit variance) ===
+    def forward_to_layer_pre(X, layer_idx):
+        """Forward pass returning pre-activation output of layer_idx."""
+        h = X.copy()
+        for l in range(layer_idx + 1):
+            h = h @ weights[l] + biases[l]
+            if l < layer_idx and l < n_layers - 1:
+                h = apply_activation(h, activation)
+        return h
+
+    for layer_idx in range(n_hidden):
+        for _ in range(n_forward_iter):
+            h = forward_to_layer_pre(X_calib, layer_idx)
+            var = float(np.var(h))
+            if not np.isfinite(var) or var < 1e-20:
+                weights[layer_idx] *= 0.5
+                continue
+            if abs(var - target_var) / max(target_var, 1e-10) < 0.1:
+                break
+            scale = np.sqrt(target_var / var)
+            scale = np.clip(scale, 0.01, 100.0)
+            weights[layer_idx] *= scale
+
+    # === Phase 4: Conservative gradient flow equalization ===
+    y_calib = rng.randn(X_calib.shape[0])
+
+    # Save post-LSUV weights for safe revert
+    weights_post_lsuv = [w.copy() for w in weights]
+
+    for grad_iter in range(n_grad_iter):
+        diag = gradient_norm_diagnostic(weights, biases, activation,
+                                        X_calib[:64], y_calib[:64])
+        gnorms = diag.layer_grad_norms
+        if not gnorms or any(g <= 0 for g in gnorms):
+            break
+
+        # Equalize hidden layers only
+        hidden_gnorms = gnorms[:n_hidden] if len(gnorms) > 1 else gnorms
+        if not hidden_gnorms or any(g <= 0 for g in hidden_gnorms):
+            break
+
+        log_gnorms = np.array([np.log(max(g, 1e-30)) for g in hidden_gnorms])
+        target_log = np.mean(log_gnorms)
+
+        # Only equalize if gradient spread is large (>2.7× ratio)
+        grad_spread = float(np.max(log_gnorms) - np.min(log_gnorms))
+        if grad_spread < 1.0:
+            break
+
+        # Conservative per-layer adjustment
+        for l in range(min(len(hidden_gnorms), n_hidden)):
+            adjustment = np.exp(grad_damping * (target_log - log_gnorms[l]))
+            adjustment = np.clip(adjustment, 0.8, 1.25)
+            weights[l] *= adjustment
+
+        # Forward recalibration to fix any variance disruption
+        for layer_idx in range(n_hidden):
+            h = forward_to_layer_pre(X_calib, layer_idx)
+            var = float(np.var(h))
+            if np.isfinite(var) and var > 1e-20:
+                ratio = abs(var - target_var) / max(target_var, 1e-10)
+                if ratio > 0.2:
+                    scale = np.sqrt(target_var / var)
+                    scale = np.clip(scale, 0.3, 3.0)
+                    weights[layer_idx] *= scale
+
+    # Stability check: if gradient equalization destabilized, revert to LSUV
+    stable = True
+    for layer_idx in range(n_hidden):
+        h = forward_to_layer_pre(X_calib, layer_idx)
+        var = float(np.var(h))
+        if not np.isfinite(var) or var > 50 or var < 0.02:
+            stable = False
+            break
+    if not stable:
+        weights = weights_post_lsuv
+
+    sigmas = [float(np.std(w) * np.sqrt(dims[i])) for i, w in enumerate(weights)]
+    return InitResult("calibrated_phasekit", weights, biases, sigmas,
+                      f"CaliKit: theory+ortho+forward+backward for {activation}")
+
+
 def lsuv_init(dims: List[int], activation: str = "relu",
               X_calib: Optional[np.ndarray] = None,
               seed: int = 42, max_iter: int = 20,
