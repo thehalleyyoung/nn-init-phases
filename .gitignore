@@ -22,3 +22,18 @@ experiments/.data_cache/
 *.tar.gz
 *.tar.bz2
 *.zip
+
+# PyTorch model files
+*.pt
+*.pth
+
+# Reviews, critiques, and critique-triages (auto-generated)
+**/review_*
+**/reviews/
+**/critiques.json
+**/critique_triage.json
+**/critique_*.md
+**/critique_*.json
+**/critique_responses.json
+**/reviewer_persona_cache*.json
+

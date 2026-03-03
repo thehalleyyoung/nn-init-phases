@@ -1,5 +1,0 @@
-{
-  "category": "B",
-  "key_quote": "The phase classification is validated against mean-field-theoretic ground truth, not against actual training outcomes. Neither the classify function's predictive accuracy for training success/failure nor the initialize function's performance vs. Xavier/Kaiming/μP on real training tasks is demonstrated.",
-  "rationale": "All three reviewers acknowledge the novelty of the theoretical framework (mean-field + finite-width corrections + Z3), but the system validates its predictions against its own theory rather than real training outcomes. The Gaussian moment closure (κ₄=0) is uncontrolled, 85.7% accuracy lacks failure-mode analysis, and UQ calibration is claimed but not demonstrated. Category B: genuinely novel idea needing deeper execution."
-}
